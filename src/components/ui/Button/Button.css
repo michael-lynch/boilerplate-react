@@ -1,0 +1,37 @@
+button {
+	appearance: none;
+}
+
+.btn {
+	transition: all 200ms;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: var(--c-black);
+	border-radius: 6px;
+	border: none;
+	padding: calc(2 * var(--gutter)) calc(4 * var(--gutter));
+	width: 100%;
+	text-align: center;
+	text-transform: uppercase;
+	text-decoration: none;
+	font-weight: 700;
+	color: var(--c-white);
+	cursor: pointer;
+	overflow: hidden;
+}
+
+.btn:hover {
+	background-color: var(--c-grey-700);
+}
+
+.btn.btn--full {
+	width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+	.btn {
+		width: auto;
+	}
+}
