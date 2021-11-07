@@ -62,10 +62,6 @@ const Button = ({
 	}
 
 	if (mods) {
-		if (mods.some((mod) => mod.includes('50') || mod.includes('100') || mod.includes('200'))) {
-			mods.push('light');
-		}
-
 		for (let i = 0; i < mods.length; i++) {
 			modNames += ` btn--${mods[i]}`;
 		}

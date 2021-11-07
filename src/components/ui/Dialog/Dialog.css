@@ -62,13 +62,16 @@
 
 .dialog .dialog__header {
 	border-bottom: 1px var(--c-grey-400) solid;
-	padding: calc(var(--gutter) * 2);
+	padding: calc(var(--gutter) * 1) calc(var(--gutter) * 1) calc(var(--gutter) * 1)
+		calc(var(--gutter) * 2);
 	display: flex;
 	justify-content: space-between;
 	width: 100%;
 }
 
 .dialog .dialog__title {
+	display: flex;
+	align-items: center;
 	margin: 0;
 }
 

@@ -45,6 +45,9 @@ const Buttons = () => {
 								<Button mods={['uppercase']} text="Uppercase" />
 							</li>
 							<li>
+								<Button mods={['border']} text="Border" />
+							</li>
+							<li>
 								<Button iconStart={<IconCalendarToday />} text="Start Icon" />
 							</li>
 							<li>
@@ -116,6 +119,70 @@ const Buttons = () => {
 							</li>
 							<li>
 								<Button mods={['yellow-700']} text="Yellow" />
+							</li>
+						</ul>
+					</div>
+					<div>
+						<Typography classes={['h4']} component="h3">
+							Colors (Border)
+						</Typography>
+						<ul className="btns__list">
+							<li>
+								<Button mods={['border', 'amber-700']} text="Amber" />
+							</li>
+							<li>
+								<Button mods={['border', 'blue-700']} text="Blue" />
+							</li>
+							<li>
+								<Button mods={['border', 'blue-grey-700']} text="Blue Grey" />
+							</li>
+							<li>
+								<Button mods={['border', 'brown-700']} text="Brown" />
+							</li>
+							<li>
+								<Button mods={['border', 'cyan-700']} text="Cyan" />
+							</li>
+							<li>
+								<Button mods={['border', 'deep-orange-700']} text="Deep Orange" />
+							</li>
+							<li>
+								<Button mods={['border', 'deep-purple-700']} text="Deep Purple" />
+							</li>
+							<li>
+								<Button mods={['border', 'green-700']} text="Green" />
+							</li>
+							<li>
+								<Button mods={['border', 'grey-700']} text="Grey" />
+							</li>
+							<li>
+								<Button mods={['border', 'indigo-700']} text="Indigo" />
+							</li>
+							<li>
+								<Button mods={['border', 'light-blue-700']} text="Light Blue" />
+							</li>
+							<li>
+								<Button mods={['border', 'light-green-700']} text="Light Green" />
+							</li>
+							<li>
+								<Button mods={['border', 'lime-700']} text="Lime" />
+							</li>
+							<li>
+								<Button mods={['border', 'orange-700']} text="Orange" />
+							</li>
+							<li>
+								<Button mods={['border', 'pink-700']} text="Pink" />
+							</li>
+							<li>
+								<Button mods={['border', 'purple-700']} text="Purple" />
+							</li>
+							<li>
+								<Button mods={['border', 'red-700']} text="Red" />
+							</li>
+							<li>
+								<Button mods={['border', 'teal-700']} text="Teal" />
+							</li>
+							<li>
+								<Button mods={['border', 'yellow-700']} text="Yellow" />
 							</li>
 						</ul>
 					</div>

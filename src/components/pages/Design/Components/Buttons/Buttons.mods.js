@@ -10,6 +10,10 @@ const mods = [
 			'Any color from the palette can be chosen (i.e. "amber-600", "green-800", "light-blue-700")',
 	},
 	{
+		mod: 'dark',
+		description: 'Applies a light-on-dark contrast',
+	},
+	{
 		mod: 'forward',
 		description: 'Adds the forward arrow to the button',
 	},
@@ -20,6 +24,10 @@ const mods = [
 	{
 		mod: 'icon',
 		description: 'Applies the icon style to the button',
+	},
+	{
+		mod: 'light',
+		description: 'Applies a dark-on-light contrast',
 	},
 	{
 		mod: 'transparent',

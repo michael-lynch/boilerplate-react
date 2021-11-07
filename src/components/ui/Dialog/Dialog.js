@@ -125,7 +125,7 @@ const Dialog = ({
 							<div className="dialog__card">
 								<header className="dialog__header">
 									<Typography
-										classes={['dialog__title']}
+										classes={['dialog__title', 'h4']}
 										component="h3"
 										id={`dialog-title-${slug}`}>
 										{title}
