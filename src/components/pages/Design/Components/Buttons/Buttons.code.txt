@@ -1,0 +1,34 @@
+import Button from 'components/ui/Button/Button';
+
+// icons
+import { ReactComponent as IconPerson } from 'icons/material/person.svg';
+
+// img
+import { ReactComponent as LogoAd } from 'img/logos/ad.svg';
+
+// basic
+<Button
+  classes={['myclass']}
+  mods={['dark', 'straight']}
+  onClick={() => doSomething()}
+  startIcon={<IconPerson />}
+  text="See User"
+/>
+
+// anchor
+<Button
+  href="https://google.com"
+  target="_blank"
+  text="Go to Google"
+/>
+
+// tertiary (text)
+<Button mods={['text', 'backward']} text="Previous" />
+<Button mods={['text', 'forward']} text="Next" />
+
+// special
+<Button
+  iconStart={<LogoAd />}
+  mods={['microsoft']}
+  text="Login with Active Directory"
+/>

@@ -1,0 +1,25 @@
+import Typography from 'components/ui/Typography/Typography';
+
+// headers
+<Typography component="h1">H1 Header</Typography>
+<Typography component="h2">H2 Header</Typography>
+<Typography component="h3">H3 Header</Typography>
+<Typography component="h4">H4 Header</Typography>
+<Typography component="h5">H5 Header</Typography>
+<Typography component="h6">H6 Header</Typography>
+
+// h1 that looks like h3
+<Typography classes={['h3']} component="h1">About</Typography>
+
+// h2 that looks like h4
+<Typography classes={['h4']} component="h2">Examples</Typography>
+
+// instruction
+<Typography mods={['instruction']}>
+  Select the data models you'd like to apply.
+</Typography>
+
+// caption
+<Typography component="figcaption" mods={['caption']}>
+  Caption of an element
+</Typography>

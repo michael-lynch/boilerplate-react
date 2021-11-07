@@ -1,0 +1,6 @@
+import Box from 'components/ui/Box/Box';
+import Typography from 'components/ui/Typography/Typography';
+
+<Box classes={['myclass']} mods={['padding', 'grey']}>
+  <Typography>Some content inside a box</Typography>
+</Box>

@@ -1,0 +1,19 @@
+import Card from 'components/ui/Card/Card';
+
+// basic
+<Card
+  classes={['articles__card']}
+  content="Some content for a card"
+  title="Title of Card"
+/>
+
+// action and image
+<Card
+  action={{
+    text: 'Do Something',
+    onClick: (e) => doSomething(e)
+  }}
+  img="https://placehold.it/300x300"
+  content="Some content for a card"
+  title="Title of Card"
+/>

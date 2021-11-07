@@ -1,0 +1,22 @@
+import Radio from 'components/fields/Radio/Radio';
+
+// controlled
+const [itemOne, setItemOne] = useState(null);
+
+<Radio
+  id="item-one"
+  label="Item One"
+  name="item-one"
+  onChange={(e) => setItemOne(e.target.value)}
+  value={itemOne}
+/>
+
+// uncontrolled
+const refItemOne = useRef();
+
+<Radio
+  id="item-one"
+  label="Item One"
+  name="item-one"
+  refInput={refItemOne}
+/>

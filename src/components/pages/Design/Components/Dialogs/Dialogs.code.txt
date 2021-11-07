@@ -1,0 +1,42 @@
+import Dialog from 'components/ui/Dialog/Dialog';
+
+// forms
+import FormLogin from 'components/forms/FormLogin/FormLogin';
+
+// state
+const [isDialogOpen, setIsDialogOpen] = useState(false);
+
+// trigger
+<Button onClick={() => setIsDialogOpen(true)} text="Open Dialog" />
+
+// basic dialog
+<Dialog
+  content="Some content for the dialog"
+  handleClose={() => setIsDialogOpen(false)}
+  isOpen={isDialogOpen}
+  title="Dialog Title"
+/>
+
+// form dialog
+<Dialog
+  btns={[
+    {
+      text: 'Submit',
+      type: 'submit',
+      form: 'form-login',
+    },
+    {
+      text: 'Close',
+      mods: ['secondary'],
+      onClick: () => {
+        setIsDialogOpen(false);
+      },
+    },
+  ]}
+  handleClose={() => setIsDialogOpen(false)}
+  hasOverlayClose={true}
+  isOpen={isDialogOpen}
+  mods={['sm']}
+  title="Form Dialog">
+  <FormLogin hasSubmit={false} />
+</Dialog>

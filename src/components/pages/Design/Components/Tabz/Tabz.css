@@ -1,0 +1,13 @@
+.tabz .tabz__sections {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-gap: calc(var(--gutter) * 2);
+}
+
+.tabz .tabz__panels {
+	margin: calc(var(--gutter) * 2) 0 0 0;
+}
+
+.tabz .tabz__white {
+	overflow: hidden;
+}

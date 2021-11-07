@@ -1,0 +1,11 @@
+import Section from 'components/layout/Section/Section';
+import Wrapper from 'components/layout/Wrapper/Wrapper';
+
+// ui
+import Typography from 'components/ui/Typography/Typography';
+
+<Section component="div" mods={['grey']}>
+  <Wrapper>
+    <Typography>A grey section</Typography>
+  </Wrapper>
+</Section>

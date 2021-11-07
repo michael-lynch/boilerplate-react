@@ -1,0 +1,30 @@
+.checkboxes .checkboxes__sections {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-gap: calc(var(--gutter) * 2);
+}
+
+.checkboxes .checkboxes__list {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-gap: calc(var(--gutter) * 2);
+	margin: calc(var(--gutter) * 2) 0 0 0;
+	padding: 0;
+}
+
+@media screen and (min-width: 768px) {
+	.checkboxes .checkboxes__list {
+		grid-template-columns: repeat(3, 1fr);
+		gap: calc(var(--gutter) * 2);
+	}
+}
+
+@media screen and (min-width: 1200px) {
+	.checkboxes .checkboxes__list {
+		grid-template-columns: 1fr;
+	}
+}
+
+.checkboxes .checkboxes__list li {
+	list-style: none;
+}

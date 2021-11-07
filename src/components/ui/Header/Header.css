@@ -1,0 +1,38 @@
+.header {
+	background-color: var(--c-black);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	height: calc(var(--gutter) * 7);
+	padding: 0 calc(var(--gutter) * 2);
+	color: var(--c-white);
+}
+
+@media screen and (min-width: 1024px) {
+	.header {
+		display: none;
+	}
+}
+
+.header .header__title {
+	display: flex;
+}
+
+.header .header__text {
+	margin: 0;
+}
+
+.header .header__title svg {
+	margin: 0 var(--gutter) 0 0;
+	width: calc(var(--gutter) * 3);
+	height: auto;
+}
+
+.header .header__logo {
+	display: flex;
+}
+
+.header .header__logo path {
+	fill: var(--c-white);
+}

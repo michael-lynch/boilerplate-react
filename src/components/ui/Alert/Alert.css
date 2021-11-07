@@ -1,0 +1,128 @@
+.alert {
+	background-color: var(--c-blue-100);
+	border-radius: calc(var(--border-radius) / 2);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: calc(var(--gutter) * 1.5);
+	color: rgba(0, 0, 0, 0.8);
+}
+
+.alert .alert__content {
+	display: flex;
+}
+
+/* icon */
+
+.alert .alert__icon {
+	display: flex;
+}
+
+.alert .alert__icon svg {
+	margin: 0 var(--gutter) 0 0;
+	width: calc(var(--gutter) * 3);
+	height: auto;
+}
+
+.alert .alert__icon path {
+	fill: rgba(0, 0, 0, 0.4);
+}
+
+/* links */
+
+.alert a {
+	font-weight: 700;
+	color: rgba(0, 0, 0, 0.85);
+	text-decoration: none;
+}
+
+/* close */
+
+.alert .alert__close {
+	display: flex;
+	cursor: pointer;
+}
+
+.alert .alert__close {
+	background-color: transparent;
+	border: none;
+	padding: 0;
+}
+
+.alert .alert__close svg {
+	width: calc(var(--gutter) * 1.5);
+	height: auto;
+}
+
+.alert .alert__close path {
+	fill: rgba(0, 0, 0, 0.4);
+}
+
+/* type */
+
+.alert--error {
+	background-color: var(--c-red-100);
+}
+
+.alert--success {
+	background-color: var(--c-green-100);
+}
+
+.alert--warning {
+	background-color: var(--c-orange-100);
+}
+
+/* outline */
+
+.alert.alert--outline {
+	border: 1px transparent solid;
+	background-color: var(--c-white);
+}
+
+/* outline info */
+
+.alert.alert--outline.alert--info {
+	border-color: var(--c-blue-500);
+	color: var(--c-blue-600);
+}
+
+.alert.alert--outline.alert--info .alert__icon path,
+.alert.alert--outline.alert--info .alert__close path {
+	fill: var(--c-blue-500);
+}
+
+/* outline success */
+
+.alert.alert--outline.alert--success {
+	border-color: var(--c-green-500);
+	color: var(--c-green-600);
+}
+
+.alert.alert--outline.alert--success .alert__icon path,
+.alert.alert--outline.alert--success .alert__close path {
+	fill: var(--c-green-500);
+}
+
+/* outline error */
+
+.alert.alert--outline.alert--error {
+	border-color: var(--c-red-500);
+	color: var(--c-red-600);
+}
+
+.alert.alert--outline.alert--error .alert__icon path,
+.alert.alert--outline.alert--error .alert__close path {
+	fill: var(--c-red-500);
+}
+
+/* outline warning */
+
+.alert.alert--outline.alert--warning {
+	border-color: var(--c-orange-500);
+	color: var(--c-orange-700);
+}
+
+.alert.alert--outline.alert--warning .alert__icon path,
+.alert.alert--outline.alert--warning .alert__close path {
+	fill: var(--c-orange-500);
+}

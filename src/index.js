@@ -1,14 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+// styles
+import './index.css';
+
 // components
 import App from './App';
 
-// utils
+// vitals
 import reportWebVitals from './reportWebVitals';
 
-// styles
-import './index.css';
+// Axe accessibilty testing
+if (process.env.NODE_ENV !== 'production') {
+	const axeConfig = {
+		runOnly: {
+			type: 'tag',
+			values: ['wcag2a', 'wcag2aa', 'wcag21aa'],
+		},
+	};
+
+	const axe = require('@axe-core/react');
+	axe(React, ReactDOM, 1000, axeConfig);
+}
 
 ReactDOM.render(
 	<React.StrictMode>

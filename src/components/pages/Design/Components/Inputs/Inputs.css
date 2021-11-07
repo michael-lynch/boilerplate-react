@@ -1,0 +1,30 @@
+.inputs .inputs__sections {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-gap: calc(var(--gutter) * 2);
+}
+
+.inputs .inputs__list {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-gap: calc(var(--gutter) * 2);
+	margin: calc(var(--gutter) * 2) 0 0 0;
+	padding: 0;
+}
+
+@media screen and (min-width: 768px) {
+	.inputs .inputs__list {
+		grid-template-columns: repeat(3, 1fr);
+		gap: calc(var(--gutter) * 2);
+	}
+}
+
+@media screen and (min-width: 1200px) {
+	.inputs .inputs__list {
+		grid-template-columns: repeat(6, 1fr);
+	}
+}
+
+.inputs .inputs__list li {
+	list-style: none;
+}

@@ -1,0 +1,31 @@
+.tables .tables__sections {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-gap: calc(var(--gutter) * 2);
+}
+
+.tables .tables__table {
+	margin: calc(var(--gutter) * 2) 0 0 0;
+}
+
+/* custom render */
+
+.tables .tables__highlight {
+	display: flex;
+	gap: calc(var(--gutter) / 2);
+	color: var(--c-error);
+}
+
+.tables .tables__highlight svg {
+	width: calc(var(--gutter) * 2);
+}
+
+.tables .tables__highlight path {
+	fill: var(--c-error);
+}
+
+/* expanded content */
+
+.tables .tables__expandedcontent {
+	padding: calc(var(--gutter) * 2);
+}

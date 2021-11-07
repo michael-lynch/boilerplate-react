@@ -1,0 +1,9 @@
+.sections .sections__sections {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-gap: calc(var(--gutter) * 2);
+}
+
+.sections .sections__examples {
+	margin: 0;
+}

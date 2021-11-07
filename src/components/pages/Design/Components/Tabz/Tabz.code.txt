@@ -1,0 +1,36 @@
+import Tabs from 'components/ui/Tabs/Tabs';
+import TabPanel from 'components/ui/TabPanel/TabPanel';
+
+// icons
+import { ReactComponent as IconCalendarToday } from 'icons/material/calendar-today.svg';
+import { ReactComponent as IconPerson } from 'icons/material/person.svg';
+
+const tabs = [
+  {
+    icon: <IconPerson />,
+    text: 'Users',
+    value: 'users',
+  },
+  {
+    icon: <IconCalendarToday />,
+    text: 'Calendar',
+    value: 'calendar',
+  },
+];
+
+<Tabs tabs={tabs} />
+
+<div>
+  <TabPanel value="users">
+    <Typography>
+      Donec sed odio operae, eu vulputate felis rhoncus. Nihil hic munitissimus habendi
+      senatus locus, nihil horum?
+    </Typography>
+  </TabPanel>
+  <TabPanel value="calendar">
+    <Typography>
+      Quisque ut dolor gravida, placerat libero vel, euismod. Hi omnes lingua,
+      institutis, legibus inter se differunt.
+    </Typography>
+  </TabPanel>
+</div>

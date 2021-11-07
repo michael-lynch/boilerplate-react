@@ -1,0 +1,22 @@
+import Section from 'components/layout/Section/Section';
+import Wrapper from 'components/layout/Wrapper/Wrapper';
+
+// ui
+import Box from 'components/ui/Box/Box';
+
+<Section>
+  <Wrapper>
+    <Box mods={['padding']}>A default wrapper</Box>
+  </Wrapper>
+</Section>
+
+<Section classes={['example']}>
+  <Wrapper mods={['grid']}>
+    <Box classes={['example__onethird']} mods={['padding']}>
+      This box takes up 4/12 of this grid wrapper.
+    </Box>
+    <Box classes={['example__twothirds']} mods={['padding']}>
+      This box takes up 8/12 of this grid wrapper.
+    </Box>
+  </Wrapper>
+</Section>

@@ -1,0 +1,5 @@
+.subtitle {
+	border-bottom: 1px var(--c-grey-500) solid;
+	margin: 0 0 calc(var(--gutter) * 2) 0;
+	padding: 0 0 calc(var(--gutter) * 2) 0;
+}

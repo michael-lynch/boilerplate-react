@@ -1,0 +1,128 @@
+input[type='password'] {
+	font-family: var(--f-arial) !important;
+	font-size: 1.6rem;
+	line-height: 1.6rem;
+}
+
+.input .input__wrapper {
+	position: relative;
+}
+
+.input .input__input {
+	background-color: var(--c-white);
+	border: none;
+	border-bottom: 1px var(--c-grey-800) solid;
+	padding: calc(var(--gutter) * 2);
+	width: 100%;
+	min-height: calc(var(--gutter) * 7);
+	font-family: var(--f-inter);
+	font-size: 1.4rem;
+	line-height: 1.4rem;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.input .input__icon {
+	transform: translateY(-50%);
+	position: absolute;
+	top: 50%;
+	left: calc(var(--gutter) * 2);
+	height: 100%;
+	display: flex;
+	align-items: center;
+}
+
+.input .input__icon svg {
+	width: calc(var(--gutter) * 2);
+	height: auto;
+	max-height: calc(var(--gutter) * 2);
+}
+
+.input .input__icon path {
+	fill: var(--c-grey-800);
+}
+
+.input .input__helper {
+	margin: calc(var(--gutter) / 2) 0 0 calc(var(--gutter) * 2);
+	font-size: 1.2rem;
+	outline: 1.2rem;
+	color: var(--c-grey-600);
+}
+
+.input .input__icon.input__icon--end {
+	right: calc(var(--gutter) * 2);
+	left: auto;
+}
+
+/* states */
+
+.input .input__input:focus {
+	background-color: var(--c-grey-300);
+}
+
+/* disabled */
+
+.input .input__input:disabled {
+	background-color: var(--c-grey-200);
+	border-color: var(--c-grey-500);
+}
+
+/* error */
+
+.input.input--error .input__input {
+	border-bottom-color: var(--c-error);
+}
+
+.input.input--error .input__icon--end {
+	background-color: var(--c-grey-800);
+	border-radius: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 20px;
+	height: 20px;
+}
+
+.input.input--error .input__icon--end svg {
+	width: 50%;
+	max-height: 50%;
+}
+
+.input.input--error .input__icon--end path {
+	fill: var(--c-white);
+}
+
+.input.input--error .input__helper {
+	color: var(--c-error);
+}
+
+.input.input--error .input__icon--end {
+	background-color: var(--c-error);
+}
+
+/* icon */
+
+.input.input--iconstart .input__input {
+	padding-left: calc(var(--gutter) * 6);
+}
+
+.input.input--iconend .input__input {
+	padding-right: calc(var(--gutter) * 6);
+}
+
+/* grey */
+
+.input.input--grey .input__input {
+	background-color: var(--c-grey-300);
+}
+
+.input.input--grey .input__input:focus {
+	background-color: var(--c-grey-200);
+}
+
+/* placeholder */
+
+::placeholder {
+	color: var(--c-grey-600);
+	opacity: 1;
+}

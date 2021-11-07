@@ -1,0 +1,30 @@
+.selects .selects__sections {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-gap: calc(var(--gutter) * 2);
+}
+
+.selects .selects__list {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-gap: calc(var(--gutter) * 2);
+	margin: calc(var(--gutter) * 2) 0 0 0;
+	padding: 0;
+}
+
+@media screen and (min-width: 768px) {
+	.selects .selects__list {
+		grid-template-columns: repeat(3, 1fr);
+		gap: calc(var(--gutter) * 2);
+	}
+}
+
+@media screen and (min-width: 1200px) {
+	.selects .selects__list {
+		grid-template-columns: repeat(6, 1fr);
+	}
+}
+
+.selects .selects__list li {
+	list-style: none;
+}

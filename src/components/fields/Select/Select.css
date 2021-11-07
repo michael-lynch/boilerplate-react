@@ -1,0 +1,89 @@
+.select {
+	position: relative;
+}
+
+.select .select__list {
+	transform: translateY(100%);
+	background-color: var(--c-white);
+	border: 1px var(--c-grey-800) solid;
+	border-top: none;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	z-index: 100;
+	display: none;
+}
+
+.select .select__wrapper {
+	position: relative;
+}
+
+.select .select__input .input__input:not(:disabled) {
+	padding-right: calc(var(--gutter) * 4);
+	cursor: pointer;
+}
+
+.select .select__list:hover {
+	display: block;
+}
+
+.select .select__list .list__item {
+	position: relative;
+	list-style: none;
+}
+
+.select .select__list .item__btn {
+	background-color: transparent;
+	border: none;
+	padding: calc(var(--gutter) * 1.5);
+	width: 100%;
+	font-family: var(--f-inter);
+	font-size: 1.4rem;
+	line-height: 1.4rem;
+	text-align: left;
+	color: var(--c-grey-600);
+	cursor: pointer;
+}
+
+.select .checkbox__label {
+	display: block;
+}
+
+.select .select__icon {
+	transform: translateY(-50%);
+	position: absolute;
+	top: 50%;
+	right: calc(var(--gutter) * 2);
+	width: 12px;
+}
+
+.select .select__icon path {
+	fill: var(--c-grey-800);
+}
+
+/* applies label click event to entire list item */
+.select .select__list .checkbox__label::after {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	content: '';
+}
+
+.select .select__list .list__item:hover {
+	background-color: var(--c-grey-300);
+}
+
+.select .select__wrapper:focus-within + .select__list {
+	display: block;
+}
+
+/* multiple */
+
+.select.select--multiple .select__list .list__item {
+	padding: calc(var(--gutter) * 1.5);
+}

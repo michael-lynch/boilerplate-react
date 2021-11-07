@@ -1,0 +1,55 @@
+.tabs .tabs__list {
+	display: flex;
+	margin: 0;
+	padding: 0;
+}
+
+.tabs .tabs__list li {
+	display: flex;
+	list-style: none;
+}
+
+.tabs .tabs__tab {
+	background-color: transparent;
+	border: none;
+	border-bottom: 2px transparent solid;
+	display: flex;
+	gap: var(--gutter);
+	font-family: var(--f-inter);
+	font-size: 1.6rem;
+	line-height: 1.6rem;
+	padding: calc(var(--gutter) * 2);
+	width: auto;
+	cursor: pointer;
+}
+
+.tabs .tabs__tab svg {
+	width: calc(var(--gutter) * 2);
+	height: auto;
+}
+
+.tabs .tabs__tab path {
+	fill: var(--c-gutter-8);
+}
+
+/* active */
+
+.tabs .tabs__tab.tabs__tab--active {
+	border-color: var(--c-grey-800);
+}
+
+/* full */
+
+.tabs.tabs--full {
+	width: 100%;
+}
+
+.tabs.tabs--full .tabs__list {
+	justify-content: space-between;
+	width: 100%;
+}
+
+.tabs.tabs--full .tabs__tab {
+	justify-content: center;
+	flex: 1;
+}

@@ -1,0 +1,15 @@
+.type .type__list {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-gap: calc(var(--gutter) * 2);
+	margin: 0;
+	padding: 0;
+}
+
+.type .type__list li {
+	list-style: none;
+}
+
+.type .type__el {
+	margin: 0;
+}

@@ -1,0 +1,21 @@
+import Checkbox from 'components/fields/Checkbox/Checkbox';
+
+// controlled
+const [itemA, setItemA] = useState(false);
+
+<Checkbox
+  id="sample-checkbox-a"
+  label="Item A"
+  onChange={(e) => setItemA(e.target.value)}
+  required={true}
+  value={itemA}
+/>
+
+// uncontrolled
+const refItemA = useRef();
+
+<Checkbox
+  id="sample-checkbox-a"
+  label="Item A"
+  refInput={refItemA}
+/>

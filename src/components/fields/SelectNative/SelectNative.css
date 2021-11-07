@@ -1,0 +1,47 @@
+.selectnative {
+	position: relative;
+}
+
+.selectnative .selectnative__select {
+	background-color: var(--c-white);
+	border: none;
+	border-bottom: 1px var(--c-grey-800) solid;
+	padding: calc(var(--gutter) * 2);
+	padding-right: calc(var(--gutter) * 4);
+	width: 100%;
+	min-height: calc(var(--gutter) * 7);
+	font-family: var(--f-inter);
+	font-size: 1.4rem;
+	cursor: pointer;
+	appearance: none;
+}
+
+.selectnative .selectnative__select option {
+	font-family: var(--f-inter);
+	font-size: 1.4rem;
+}
+
+.selectnative .selectnative__icon {
+	transform: translateY(-50%);
+	position: absolute;
+	top: 50%;
+	right: calc(var(--gutter) * 2);
+	width: 12px;
+}
+
+.selectnative .selectnative__icon path {
+	fill: var(--c-grey-800);
+}
+
+/* disabled */
+
+.selectnative.selectnative--disabled .selectnative__select {
+	border-color: var(--c-grey-500);
+	opacity: 1;
+	cursor: default;
+	color: var(--c-grey-600);
+}
+
+.selectnative.selectnative--disabled .selectnative__icon path {
+	fill: var(--c-grey-500);
+}

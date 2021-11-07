@@ -1,0 +1,33 @@
+.formlogin .formlogin__list {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-gap: calc(var(--gutter) * 2);
+	margin: 0;
+	padding: 0;
+}
+
+.formlogin .formlogin__list li {
+	list-style: none;
+}
+
+.formlogin .formlogin__or {
+	position: relative;
+	display: flex;
+	justify-content: center;
+}
+
+.formlogin .formlogin__or:before {
+	background-color: var(--c-grey-500);
+	position: absolute;
+	top: 50%;
+	left: 0;
+	width: 100%;
+	height: 1px;
+	content: '';
+}
+
+.formlogin .formlogin__or .or__text {
+	background-color: var(--c-white);
+	padding: 0 var(--gutter);
+	position: relative;
+}

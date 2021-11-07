@@ -1,0 +1,49 @@
+.login {
+	background-color: var(--c-grey-800);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	min-height: 100vh;
+}
+
+.login__content {
+	margin: 0 calc(var(--gutter) * 2);
+	width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+	.login__content {
+		max-width: 400px;
+	}
+}
+
+.login__logo {
+	display: flex;
+	justify-content: center;
+	margin: 0 0 calc(var(--gutter) * 2) 0;
+}
+
+.login__logo svg {
+	width: calc(var(--gutter) * 6);
+}
+
+.login__logo .logo__logotype {
+	fill: var(--c-white);
+}
+
+.login__card {
+	background-color: var(--c-white);
+	border-radius: var(--gutter);
+	padding: calc(var(--gutter) * 2);
+}
+
+@media screen and (min-width: 768px) {
+	.login__card {
+		padding: calc(var(--gutter) * 4);
+	}
+}
+
+.login .login__intro {
+	color: var(--c-grey-600);
+}

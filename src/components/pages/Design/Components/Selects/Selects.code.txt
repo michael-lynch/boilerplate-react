@@ -1,0 +1,59 @@
+import SelectNative from 'components/fields/SelectNative/SelectNative';
+import Select from 'components/fields/Select/Select';
+
+// options
+const sizes = [
+  {
+    label: 'Small',
+    value: 'sm'
+  },
+  {
+    label: 'Medium',
+    value: 'md'
+  },
+  {
+    label: 'Large',
+    value: 'lg'
+  }
+];
+
+// native (controlled)
+const [size, setSize] = useState('md');
+
+<SelectNative
+  onChange={(e) => setSize(e.target.value)}
+  options={sizes}
+  value={size}
+/>
+
+// native (uncontrolled)
+const refSize = useRef();
+
+<SelectNative
+  options={sizes}
+  refSelect={refSize}
+/>
+
+// custom (controlled)
+const [size, setSize] = useState('md');
+
+<Select
+  onChange={(value) => setSize(value)}
+  options={sizes}
+/>
+
+// multiple
+<Select
+  multiple={true}
+  onChange={(value) => setSize(value)}
+  options={[
+    {
+      label: 'Option One',
+      value: 'option-one'
+    },
+    {
+      label: 'Option Two',
+      value: 'option-two'
+    }
+  ]}
+/>

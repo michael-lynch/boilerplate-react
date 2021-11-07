@@ -1,0 +1,53 @@
+import Table from 'components/ui/Table/Table';
+
+// headers
+const headers = [
+  {
+    text: 'Model',
+    value: 'model',
+    render: (value, item) => {
+      return (
+        <div>
+          <IconModel />
+          <span>{value}</span>
+        </div>
+      );
+    }
+  },
+  {
+    text: 'Project',
+    value: 'project'
+  }
+];
+
+const data = [
+  {
+    model: 'E5 XAM',
+    project: 'Project Name'
+  },
+  {
+    model: 'E9 BAK',
+    project: 'Project Name'
+  },
+  {
+    model: 'A3 PLO',
+    project: 'Project Name'
+  }
+]
+
+// basic
+<Table
+  data={data}
+  headers={headers}
+/>
+
+// expandable
+const renderExpandableRow = (item) = {
+  return <MyExpandableRow item={item} />
+}
+
+<Table
+  data={data}
+  headers={headers}
+  renderExpandableRow={renderExpandableRow}
+/>

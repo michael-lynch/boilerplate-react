@@ -1,0 +1,26 @@
+import Toast from 'components/ui/Toast/Toast';
+
+// state
+const [isToastOpen, setIsToastOpen] = useState(false);
+
+// basic
+<Toast
+  isOpen={isToastOpen}
+  onClose={() => setIsToastOpen(false)}
+  position="topRight"
+  text="User Updated"
+  type="success"
+/>
+
+// action
+<Toast
+  action={{
+    text: 'See Updates',
+    href="/updates"
+  }}
+  isOpen={isToastOpen}
+  onClose={() => setIsToastOpen(false)}
+  position="topLeft"
+  text="Not Yet Available"
+  type="warning"
+/>

@@ -1,0 +1,11 @@
+import Alert from 'components/ui/Alert/Alert';
+
+<Alert>This is a default info alert.</Alert>
+<Alert type="success">This is a success alert.</Alert>
+<Alert type="error">This is a error alert.</Alert>
+<Alert type="warning">This is a warning alert.</Alert>
+
+// outline
+<Alert mods={['outline']} type="success">
+  This is a success alert.
+</Alert>

@@ -1,0 +1,75 @@
+.chip {
+	border: 1px var(--c-grey-700) solid;
+	border-radius: 100px;
+	display: flex;
+	align-items: center;
+	gap: var(--gutter);
+	padding: calc(var(--gutter) * 0.5) calc(var(--gutter) * 4);
+	text-transform: capitalize;
+	color: var(--c-grey-700);
+}
+
+/* filled */
+
+.chip.chip--filled {
+	background-color: var(--c-grey-700);
+	color: var(--c-white);
+}
+
+/* info */
+
+.chip.chip--info {
+	border-color: var(--c-blue-500);
+	color: var(--c-blue-500);
+}
+
+.chip.chip--filled.chip--info {
+	background-color: var(--c-blue-500);
+	color: var(--c-white);
+}
+
+/* error */
+
+.chip.chip--error {
+	border-color: var(--c-error);
+	color: var(--c-error);
+}
+
+.chip.chip--filled.chip--error {
+	background-color: var(--c-error);
+	color: var(--c-white);
+}
+
+/* success */
+
+.chip.chip--success {
+	border-color: var(--c-success);
+	color: var(--c-success);
+}
+
+.chip.chip--filled.chip--success {
+	background-color: var(--c-success);
+	color: var(--c-white);
+}
+
+/* warning */
+
+.chip.chip--warning {
+	border-color: var(--c-warning);
+	color: var(--c-warning);
+}
+
+.chip.chip--filled.chip--warning {
+	background-color: var(--c-warning);
+	color: var(--c-white);
+}
+
+/* deletable */
+
+.chip.chip--deletable {
+	background-color: var(--c-grey-200);
+	border: none;
+	padding: calc(var(--gutter) * 0.5) calc(var(--gutter) * 2);
+	padding-right: var(--gutter);
+	color: var(--c-grey-800);
+}

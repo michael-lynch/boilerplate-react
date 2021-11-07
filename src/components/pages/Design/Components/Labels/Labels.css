@@ -1,0 +1,30 @@
+.labels .labels__sections {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-gap: calc(var(--gutter) * 2);
+}
+
+.labels .labels__list {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-gap: calc(var(--gutter) * 2);
+	margin: calc(var(--gutter) * 2) 0 0 0;
+	padding: 0;
+}
+
+@media screen and (min-width: 768px) {
+	.labels .labels__list {
+		grid-template-columns: repeat(3, 1fr);
+		gap: calc(var(--gutter) * 2);
+	}
+}
+
+@media screen and (min-width: 1200px) {
+	.labels .labels__list {
+		grid-template-columns: 1fr;
+	}
+}
+
+.labels .labels__list li {
+	list-style: none;
+}

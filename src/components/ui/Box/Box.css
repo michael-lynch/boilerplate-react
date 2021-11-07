@@ -1,0 +1,42 @@
+.box {
+	background-color: var(--c-white);
+	border-radius: var(--border-radius);
+	color: var(--c-grey-800);
+}
+
+/* border */
+
+.box.box--border {
+	border: 1px var(--c-grey-500) solid;
+}
+
+/* dark */
+
+.box.box--dark {
+	background-color: var(--c-grey-900);
+	color: var(--c-white);
+}
+
+/* grey */
+
+.box.box--grey {
+	background-color: var(--c-grey-200);
+}
+
+/* padding */
+
+.box.box--padding {
+	padding: calc(var(--gutter) * 2);
+}
+
+/* rounded */
+
+.box.box--rounded {
+	border-radius: var(--border-radius);
+}
+
+/* shadow */
+
+.box.box--shadow {
+	box-shadow: var(--shadow-md);
+}

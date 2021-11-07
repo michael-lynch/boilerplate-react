@@ -1,0 +1,41 @@
+.toasts .toasts__sections {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-gap: calc(var(--gutter) * 2);
+}
+
+.toasts .toasts__list {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-gap: calc(var(--gutter) * 2);
+	margin: calc(var(--gutter) * 2) 0 0 0;
+	padding: 0;
+}
+
+@media screen and (min-width: 768px) {
+	.toasts .toasts__list {
+		grid-template-columns: repeat(2, 1fr);
+		gap: calc(var(--gutter) * 2);
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.toasts .toasts__list.toasts__list--btns {
+		grid-template-columns: repeat(4, 1fr);
+	}
+}
+
+@media screen and (min-width: 1200px) {
+	.toasts .toasts__list {
+		grid-template-columns: repeat(4, 1fr);
+	}
+}
+
+.toasts .toasts__list li {
+	list-style: none;
+}
+
+.toasts .toasts__toast {
+	max-width: none;
+	width: 100%;
+}

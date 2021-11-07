@@ -1,0 +1,39 @@
+.colors .colors__list {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: calc(var(--gutter) * 3);
+	margin: calc(var(--gutter) * 2) 0 0 0;
+	padding: 0;
+}
+
+@media screen and (min-width: 768px) {
+	.colors .colors__list {
+		grid-template-columns: repeat(7, 1fr);
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	.colors .colors__list {
+		grid-template-columns: repeat(10, 1fr);
+	}
+}
+
+.colors .colors__list li {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.colors .colors__section {
+	margin: 0 0 calc(var(--gutter) * 2) 0;
+}
+
+.colors .colors__section:last-child {
+	margin: 0;
+}
+
+@media screen and (min-width: 768px) {
+	.colors .colors__section {
+		margin: 0 0 calc(var(--gutter) * 4) 0;
+	}
+}

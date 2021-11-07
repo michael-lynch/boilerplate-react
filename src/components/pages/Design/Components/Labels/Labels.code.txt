@@ -1,0 +1,6 @@
+import Input from 'components/fields/Input/Input';
+import Label from 'components/fields/Label/Label';
+
+// label with input
+<Label id="sample-input">Label</Label>
+<Input id="sample-input" name="sample-input" type="text" />

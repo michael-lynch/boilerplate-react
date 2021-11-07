@@ -1,0 +1,14 @@
+.docs {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-gap: calc(var(--gutter) * 2);
+}
+
+.docs .docs__type {
+	color: var(--c-teal-6);
+}
+
+.docs .docs__notes {
+	font-style: italic;
+	color: var(--c-grey-600);
+}

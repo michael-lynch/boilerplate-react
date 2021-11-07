@@ -1,0 +1,17 @@
+.chips .chips__sections {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-gap: calc(var(--gutter) * 2);
+}
+
+.chips .chips__list {
+	display: flex;
+	flex-wrap: wrap;
+	gap: calc(var(--gutter) * 2);
+	margin: calc(var(--gutter) * 2) 0 0 0;
+	padding: 0;
+}
+
+.chips .chips__list li {
+	list-style: none;
+}

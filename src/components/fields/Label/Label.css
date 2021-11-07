@@ -1,0 +1,5 @@
+.label {
+	display: inline-block;
+	margin: 0 0 var(--gutter) 0;
+	cursor: pointer;
+}

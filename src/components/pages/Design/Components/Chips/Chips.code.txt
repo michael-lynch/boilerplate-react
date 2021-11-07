@@ -1,0 +1,17 @@
+import Chip from 'components/ui/Chip/Chip';
+
+// basic
+<Chip label="Default" />
+<Chip label="Info" type="info" />
+<Chip label="Success" type="success" />
+<Chip label="Error" type="error" />
+<Chip label="Warning" type="warning" />
+
+// filled
+<Chip label="Success" mods={['filled']} type="success" />
+
+// interactive
+<Chip
+  label="Toronto"
+  onDelete={(e) => handleDeleteChip('toronto')}
+/>

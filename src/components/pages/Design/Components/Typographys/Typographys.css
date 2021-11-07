@@ -1,0 +1,34 @@
+.typographys .typographys__sections {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-gap: calc(var(--gutter) * 2);
+}
+
+.typographys .typographys__list {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-gap: calc(var(--gutter) * 2);
+	margin: calc(var(--gutter) * 2) 0 0 0;
+	padding: 0;
+}
+
+@media screen and (min-width: 768px) {
+	.typographys .typographys__list {
+		grid-template-columns: repeat(3, 1fr);
+		gap: calc(var(--gutter) * 2);
+	}
+}
+
+@media screen and (min-width: 1200px) {
+	.typographys .typographys__list {
+		grid-template-columns: 1fr;
+	}
+}
+
+.typographys .typographys__list li {
+	list-style: none;
+}
+
+.typographys .typographys__text {
+	margin: 0;
+}

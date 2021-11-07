@@ -1,12 +1,30 @@
 // styles
 import './Section.css';
 
-function Section({ children, classes, component, mods }) {
-	const Tag = component ? component : 'section';
-	const classNames = classes ? ` ${classes.join(' ')}` : '';
-	const modNames = mods ? ` ${mods.map((mod) => `section--${mod}`).join(' ')}` : '';
+const Section = ({ children, component, classes, mods, ...props }) => {
+	// vars
+	const Tag = component || 'section';
 
-	return <Tag className={`section${classNames}${modNames}`}>{children}</Tag>;
-}
+	let classNames = '';
+	let modNames = '';
+
+	if (classes) {
+		for (let i = 0; i < classes.length; i++) {
+			classNames += `${classes[i]} `;
+		}
+	}
+
+	if (mods) {
+		for (let i = 0; i < mods.length; i++) {
+			modNames += ` section--${mods[i]}`;
+		}
+	}
+
+	return (
+		<Tag className={`${classNames}section${modNames}`} {...props}>
+			{children}
+		</Tag>
+	);
+};
 
 export default Section;

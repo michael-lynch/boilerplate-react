@@ -1,0 +1,23 @@
+import Input from 'components/fields/Input/Input';
+
+// uncontrolled
+const refUsername = useRef();
+
+<Input
+  error="Username is required"
+  helper="Some helper text"
+  placeholder="Enter your username"
+  startIcon={<IconPerson />}
+  refInput={refUsername}
+  required={true}
+  type="text"
+/>
+
+// controlled
+const [email, setEmail] = useState(null);
+
+<Input
+  onChange={(e) => setEmail(e.target.value)}
+  type="email"
+  value={email}
+/>
