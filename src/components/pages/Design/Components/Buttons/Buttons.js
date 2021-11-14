@@ -12,6 +12,8 @@ import Code from 'components/ui/Code/Code';
 import Typography from 'components/ui/Typography/Typography';
 
 // icons
+import { ReactComponent as IconArrowCircleLeft } from 'icons/material/arrow-circle-left.svg';
+import { ReactComponent as IconArrowCircleRight } from 'icons/material/arrow-circle-right.svg';
 import { ReactComponent as IconCalendarToday } from 'icons/material/calendar-today.svg';
 import { ReactComponent as IconClear } from 'icons/material/clear.svg';
 import { ReactComponent as IconMailOutline } from 'icons/material/mail-outline.svg';
@@ -22,10 +24,6 @@ import dataMods from './Buttons.mods.js';
 
 // code
 import code from './Buttons.code.txt';
-
-// icons
-import { ReactComponent as IconArrowCircleLeft } from 'icons/material/arrow-circle-left.svg';
-import { ReactComponent as IconArrowCircleRight } from 'icons/material/arrow-circle-right.svg';
 
 // styles
 import './Buttons.css';
