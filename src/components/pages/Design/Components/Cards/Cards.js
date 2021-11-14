@@ -11,6 +11,9 @@ import Card from 'components/ui/Card/Card';
 import Code from 'components/ui/Code/Code';
 import Typography from 'components/ui/Typography/Typography';
 
+// icons
+import { ReactComponent as IconArrowCircleRight } from 'icons/material/arrow-circle-right.svg';
+
 // docs
 import dataProps from './Cards.props.js';
 
@@ -52,6 +55,11 @@ const Cards = () => {
 							</li>
 							<li>
 								<Card
+									action={{
+										iconEnd: <IconArrowCircleRight />,
+										mods: ['text'],
+										text: 'Read more',
+									}}
 									content="Tu quoque, Brute, fili mi, nihil timor populi, nihil! Fabio vel iudice vincam, sunt in culpa qui officia."
 									img={{
 										alt: 'alt text',
