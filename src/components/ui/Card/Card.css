@@ -19,8 +19,7 @@
 }
 
 .card .card__header {
-	border-bottom: 1px var(--c-grey-500) solid;
-	padding: calc(var(--gutter) * 1);
+	padding: calc(var(--gutter) * 2) calc(var(--gutter) * 2) 0 calc(var(--gutter) * 2);
 }
 
 .card .card__title {
@@ -28,9 +27,9 @@
 }
 
 .card .card__content {
-	padding: calc(var(--gutter) * 1);
+	padding: calc(var(--gutter) * 2);
 }
 
 .card .card__action {
-	border-top: 1px var(--c-grey-500) solid;
+	padding: calc(var(--gutter) * 2);
 }

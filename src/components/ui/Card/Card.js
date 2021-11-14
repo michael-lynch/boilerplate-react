@@ -37,7 +37,7 @@ const Card = ({ action, classes, content, img, mods, title }) => {
 			</div>
 			{action && (
 				<div className="card__action">
-					<Button mods={['full', 'straight', 'dark']} {...action} />
+					<Button mods={['full']} {...action} />
 				</div>
 			)}
 		</div>

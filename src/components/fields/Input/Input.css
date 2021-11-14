@@ -11,7 +11,7 @@ input[type='password'] {
 .input .input__input {
 	background-color: var(--c-white);
 	border: none;
-	border-bottom: 1px var(--c-grey-800) solid;
+	border-radius: 4px;
 	padding: calc(var(--gutter) * 2);
 	width: 100%;
 	min-height: calc(var(--gutter) * 7);
@@ -57,7 +57,7 @@ input[type='password'] {
 /* states */
 
 .input .input__input:focus {
-	background-color: var(--c-grey-300);
+	background-color: var(--c-grey-100);
 }
 
 /* disabled */

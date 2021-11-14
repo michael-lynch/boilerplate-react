@@ -95,6 +95,7 @@
 .alert.alert--outline {
 	border: 1px transparent solid;
 	background-color: var(--c-white);
+	color: var(--c-black);
 }
 
 /* outline */
