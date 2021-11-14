@@ -142,6 +142,7 @@
 .table.table--secondary .table__th {
 	background-color: transparent;
 	border-bottom: 1px var(--c-grey-500) solid;
+	color: var(--c-black);
 }
 
 .table.table--secondary .table__tr,

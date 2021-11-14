@@ -54,7 +54,8 @@
 /* checked */
 
 .checkbox .checkbox__checkbox:checked {
-	background-color: var(--c-grey-800);
+	background-color: var(--c-black);
+	border-color: var(--c-black);
 	color: var(--c-white);
 }
 

@@ -5,7 +5,7 @@ const mods = [
 	},
 	{
 		mod: '[color]',
-		description: 'Changes the background color of the button',
+		description: 'Changes the color of the button',
 		notes:
 			'Any color from the palette can be chosen (i.e. "amber-600", "green-800", "light-blue-700")',
 	},
@@ -28,6 +28,10 @@ const mods = [
 	{
 		mod: 'light',
 		description: 'Applies a dark-on-light contrast',
+	},
+	{
+		mod: 'lg',
+		description: 'Makes the button larger',
 	},
 	{
 		mod: 'transparent',

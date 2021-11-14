@@ -14,6 +14,7 @@ import Typography from 'components/ui/Typography/Typography';
 // icons
 import { ReactComponent as IconCalendarToday } from 'icons/material/calendar-today.svg';
 import { ReactComponent as IconClear } from 'icons/material/clear.svg';
+import { ReactComponent as IconMailOutline } from 'icons/material/mail-outline.svg';
 
 // docs
 import dataProps from './Buttons.props.js';
@@ -22,10 +23,93 @@ import dataMods from './Buttons.mods.js';
 // code
 import code from './Buttons.code.txt';
 
+// icons
+import { ReactComponent as IconArrowCircleLeft } from 'icons/material/arrow-circle-left.svg';
+import { ReactComponent as IconArrowCircleRight } from 'icons/material/arrow-circle-right.svg';
+
 // styles
 import './Buttons.css';
 
 const Buttons = () => {
+	const colors = [
+		{
+			name: 'Amber',
+			slug: 'amber',
+		},
+		{
+			name: 'Blue',
+			slug: 'blue',
+		},
+		{
+			name: 'Blue Grey',
+			slug: 'blue-grey',
+		},
+		{
+			name: 'Brown',
+			slug: 'brown',
+		},
+		{
+			name: 'Cyan',
+			slug: 'cyan',
+		},
+		{
+			name: 'Deep Orange',
+			slug: 'deep-orange',
+		},
+		{
+			name: 'Deep Purple',
+			slug: 'deep-purple',
+		},
+		{
+			name: 'Green',
+			slug: 'green',
+		},
+		{
+			name: 'Grey',
+			slug: 'grey',
+		},
+		{
+			name: 'Indigo',
+			slug: 'indigo',
+		},
+		{
+			name: 'Light Blue',
+			slug: 'light-blue',
+		},
+		{
+			name: 'Light Green',
+			slug: 'light-green',
+		},
+		{
+			name: 'Lime',
+			slug: 'lime',
+		},
+		{
+			name: 'Orange',
+			slug: 'orange',
+		},
+		{
+			name: 'Pink',
+			slug: 'pink',
+		},
+		{
+			name: 'Purple',
+			slug: 'purple',
+		},
+		{
+			name: 'Red',
+			slug: 'red',
+		},
+		{
+			name: 'Teal',
+			slug: 'teal',
+		},
+		{
+			name: 'Yellow',
+			slug: 'yellow',
+		},
+	];
+
 	return (
 		<Section classes={['btns']} id="button">
 			<Wrapper>
@@ -48,13 +132,36 @@ const Buttons = () => {
 								<Button mods={['border']} text="Border" />
 							</li>
 							<li>
+								<Button disabled={true} text="Disabled" />
+							</li>
+						</ul>
+					</div>
+					<div>
+						<Typography classes={['h4']} component="h3">
+							Sizes
+						</Typography>
+						<ul className="btns__list">
+							<li>
+								<Button mods={['sm']} text="Small" />
+							</li>
+							<li>
+								<Button mods={['md']} text="Medium" />
+							</li>
+							<li>
+								<Button mods={['lg']} text="Large" />
+							</li>
+						</ul>
+					</div>
+					<div>
+						<Typography classes={['h4']} component="h3">
+							Icons
+						</Typography>
+						<ul className="btns__list">
+							<li>
 								<Button iconStart={<IconCalendarToday />} text="Start Icon" />
 							</li>
 							<li>
 								<Button iconEnd={<IconCalendarToday />} text="End Icon" />
-							</li>
-							<li>
-								<Button disabled={true} text="Disabled" />
 							</li>
 						</ul>
 					</div>
@@ -63,63 +170,11 @@ const Buttons = () => {
 							Colors
 						</Typography>
 						<ul className="btns__list">
-							<li>
-								<Button mods={['amber-700']} text="Amber" />
-							</li>
-							<li>
-								<Button mods={['blue-700']} text="Blue" />
-							</li>
-							<li>
-								<Button mods={['blue-grey-700']} text="Blue Grey" />
-							</li>
-							<li>
-								<Button mods={['brown-700']} text="Brown" />
-							</li>
-							<li>
-								<Button mods={['cyan-700']} text="Cyan" />
-							</li>
-							<li>
-								<Button mods={['deep-orange-700']} text="Deep Orange" />
-							</li>
-							<li>
-								<Button mods={['deep-purple-700']} text="Deep Purple" />
-							</li>
-							<li>
-								<Button mods={['green-700']} text="Green" />
-							</li>
-							<li>
-								<Button mods={['grey-700']} text="Grey" />
-							</li>
-							<li>
-								<Button mods={['indigo-700']} text="Indigo" />
-							</li>
-							<li>
-								<Button mods={['light-blue-700']} text="Light Blue" />
-							</li>
-							<li>
-								<Button mods={['light-green-700']} text="Light Green" />
-							</li>
-							<li>
-								<Button mods={['lime-700']} text="Lime" />
-							</li>
-							<li>
-								<Button mods={['orange-700']} text="Orange" />
-							</li>
-							<li>
-								<Button mods={['pink-700']} text="Pink" />
-							</li>
-							<li>
-								<Button mods={['purple-700']} text="Purple" />
-							</li>
-							<li>
-								<Button mods={['red-700']} text="Red" />
-							</li>
-							<li>
-								<Button mods={['teal-700']} text="Teal" />
-							</li>
-							<li>
-								<Button mods={['yellow-700']} text="Yellow" />
-							</li>
+							{colors.map((color) => (
+								<li>
+									<Button mods={[`${color.slug}-700`]} text={color.name} />
+								</li>
+							))}
 						</ul>
 					</div>
 					<div>
@@ -127,80 +182,66 @@ const Buttons = () => {
 							Colors (Border)
 						</Typography>
 						<ul className="btns__list">
+							{colors.map((color) => (
+								<li>
+									<Button mods={['border', `${color.slug}-700`]} text={color.name} />
+								</li>
+							))}
+						</ul>
+					</div>
+					<div>
+						<Typography classes={['h4']} component="h3">
+							Text
+						</Typography>
+						<ul className="btns__list">
 							<li>
-								<Button mods={['border', 'amber-700']} text="Amber" />
+								<Button mods={['text']} text="Default" />
 							</li>
 							<li>
-								<Button mods={['border', 'blue-700']} text="Blue" />
+								<Button mods={['text', 'underline']} text="Underline" />
 							</li>
 							<li>
-								<Button mods={['border', 'blue-grey-700']} text="Blue Grey" />
+								<Button iconEnd={<IconArrowCircleRight />} mods={['text']} text="Start Icon" />
 							</li>
 							<li>
-								<Button mods={['border', 'brown-700']} text="Brown" />
+								<Button iconStart={<IconArrowCircleLeft />} mods={['text']} text="End Icon" />
 							</li>
 							<li>
-								<Button mods={['border', 'cyan-700']} text="Cyan" />
-							</li>
-							<li>
-								<Button mods={['border', 'deep-orange-700']} text="Deep Orange" />
-							</li>
-							<li>
-								<Button mods={['border', 'deep-purple-700']} text="Deep Purple" />
-							</li>
-							<li>
-								<Button mods={['border', 'green-700']} text="Green" />
-							</li>
-							<li>
-								<Button mods={['border', 'grey-700']} text="Grey" />
-							</li>
-							<li>
-								<Button mods={['border', 'indigo-700']} text="Indigo" />
-							</li>
-							<li>
-								<Button mods={['border', 'light-blue-700']} text="Light Blue" />
-							</li>
-							<li>
-								<Button mods={['border', 'light-green-700']} text="Light Green" />
-							</li>
-							<li>
-								<Button mods={['border', 'lime-700']} text="Lime" />
-							</li>
-							<li>
-								<Button mods={['border', 'orange-700']} text="Orange" />
-							</li>
-							<li>
-								<Button mods={['border', 'pink-700']} text="Pink" />
-							</li>
-							<li>
-								<Button mods={['border', 'purple-700']} text="Purple" />
-							</li>
-							<li>
-								<Button mods={['border', 'red-700']} text="Red" />
-							</li>
-							<li>
-								<Button mods={['border', 'teal-700']} text="Teal" />
-							</li>
-							<li>
-								<Button mods={['border', 'yellow-700']} text="Yellow" />
+								<Button disabled={true} mods={['text']} text="Disabled" />
 							</li>
 						</ul>
 					</div>
 					<div>
 						<Typography classes={['h4']} component="h3">
-							Tertiary (Text)
+							Text (Sizes)
 						</Typography>
 						<ul className="btns__list">
 							<li>
-								<Button mods={['text', 'forward']} text="Learn more" />
+								<Button mods={['text', 'sm']} text="Small" />
 							</li>
 							<li>
-								<Button mods={['text', 'backward']} text="Back" />
+								<Button mods={['text', 'md']} text="Medium" />
 							</li>
+							<li>
+								<Button mods={['text', 'lg']} text="Large" />
+							</li>
+						</ul>
+					</div>
 
-							<li>
-								<Button disabled={true} mods={['text', 'forward']} text="Disabled" />
-							</li>
+					<div>
+						<Typography classes={['h4']} component="h3">
+							Text (Colors)
+						</Typography>
+						<ul className="btns__list">
+							{colors.map((color) => (
+								<li>
+									<Button
+										iconEnd={<IconArrowCircleRight />}
+										mods={['text', `${color.slug}-500`]}
+										text={color.name}
+									/>
+								</li>
+							))}
 						</ul>
 					</div>
 
@@ -210,8 +251,31 @@ const Buttons = () => {
 						</Typography>
 						<ul className="btns__list">
 							<li>
-								<Button icon={<IconClear />} mods={['icon']} text="Close" />
+								<Button icon={<IconMailOutline />} mods={['icon']} text="Close" />
 							</li>
+							<li>
+								<Button icon={<IconMailOutline />} mods={['icon', 'md']} text="Close" />
+							</li>
+							<li>
+								<Button icon={<IconMailOutline />} mods={['icon', 'lg']} text="Close" />
+							</li>
+						</ul>
+					</div>
+
+					<div>
+						<Typography classes={['h4']} component="h3">
+							Icon (Colors)
+						</Typography>
+						<ul className="btns__list">
+							{colors.map((color) => (
+								<li>
+									<Button
+										icon={<IconClear />}
+										mods={['icon', `${color.slug}-500`]}
+										text={color.name}
+									/>
+								</li>
+							))}
 						</ul>
 					</div>
 

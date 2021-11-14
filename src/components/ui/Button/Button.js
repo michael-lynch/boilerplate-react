@@ -1,9 +1,6 @@
 // ui
 import Typography from 'components/ui/Typography/Typography';
 
-// icons
-import { ReactComponent as IconArrowForward } from 'icons/material/arrow-forward.svg';
-
 // styles
 import './Button.css';
 
@@ -36,19 +33,6 @@ const Button = ({
 			return <span className="btn__icon">{icon}</span>;
 		}
 		return false;
-	};
-
-	const renderIconPreset = (type) => {
-		if (
-			(mods?.includes('forward') && type === 'forward') ||
-			(mods?.includes('backward') && type === 'backward')
-		) {
-			return (
-				<span className="btn__icon">
-					<IconArrowForward />
-				</span>
-			);
-		}
 	};
 
 	if (ariaLabel) {
@@ -100,12 +84,10 @@ const Button = ({
 		<Tag className={`${classNames}btn${modNames}`} {...btnProps}>
 			{renderIcon(icon)}
 			{renderIcon(iconStart)}
-			{renderIconPreset('backward')}
 			<Typography classes={['btn__text']} mods={textMods} component="span">
 				{text}
 			</Typography>
 			{renderIcon(iconEnd)}
-			{renderIconPreset('forward')}
 		</Tag>
 	);
 };

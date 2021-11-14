@@ -22,13 +22,6 @@ import { ReactComponent as LogoAd } from 'img/logos/ad.svg';
   text="Go to Google"
 />
 
-// tertiary (text)
-<Button mods={['text', 'backward']} text="Previous" />
-<Button mods={['text', 'forward']} text="Next" />
-
-// special
-<Button
-  iconStart={<LogoAd />}
-  mods={['microsoft']}
-  text="Login with Active Directory"
-/>
+// text
+<Button iconStart={<IconArrowCircleLeft />} mods={['text']} text="Previous" />
+<Button iconEnd={<IconArrowCircleRight />} mods={['text']} text="Next" />

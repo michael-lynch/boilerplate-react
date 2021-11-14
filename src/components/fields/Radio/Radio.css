@@ -32,7 +32,7 @@
 /* checked */
 
 .radio .radio__radio:checked {
-	border: 8px var(--c-grey-800) solid;
+	border: 8px var(--c-black) solid;
 	color: var(--c-white);
 }
 
