@@ -49,12 +49,25 @@ const Tables = () => {
 					</div>
 					<div>
 						<Typography classes={['h4']} component="h3">
+							Striped
+						</Typography>
+						<Table classes={['tables__table']} data={data} headers={headers} mods={['striped']} />
+					</div>
+					<div>
+						<Typography classes={['h4']} component="h3">
+							Border
+						</Typography>
+						<Table classes={['tables__table']} data={data} headers={headers} mods={['border']} />
+					</div>
+					<div>
+						<Typography classes={['h4']} component="h3">
 							Expandable
 						</Typography>
 						<Table
 							classes={['tables__table']}
 							data={data}
 							headers={headers}
+							mods={['border', 'striped']}
 							renderExpandableRow={renderExpandableRow}
 						/>
 					</div>

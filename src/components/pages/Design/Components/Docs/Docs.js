@@ -18,7 +18,7 @@ const Docs = ({ dataMods = [], dataProps = [] }) => {
 						Props
 					</Typography>
 
-					<Table data={dataProps} headers={headersProps} />
+					<Table data={dataProps} headers={headersProps} mods={['border', 'striped']} />
 				</div>
 			)}
 
@@ -28,7 +28,7 @@ const Docs = ({ dataMods = [], dataProps = [] }) => {
 						Modifiers
 					</Typography>
 
-					<Table data={dataMods} headers={headersMods} />
+					<Table data={dataMods} headers={headersMods} mods={['border', 'striped']} />
 				</div>
 			)}
 		</div>

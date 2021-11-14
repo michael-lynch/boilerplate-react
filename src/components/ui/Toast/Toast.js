@@ -53,6 +53,10 @@ const Toast = ({ action, classes, isOpen, mods, onClose, position, text, type })
 		setTimeout(() => {
 			if (refToast.current) {
 				refToast.current.classList.remove('toast--open');
+
+				if (onClose) {
+					onClose();
+				}
 			}
 		}, 6000);
 	}

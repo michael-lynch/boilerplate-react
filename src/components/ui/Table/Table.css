@@ -3,7 +3,6 @@
 }
 
 .table .table__mask {
-	border: 1px var(--c-grey-500) solid;
 	border-radius: var(--border-radius);
 	width: 100%;
 	overflow-x: auto;
@@ -47,15 +46,10 @@
 
 .table .table__tr {
 	transition: all 200ms;
-	border-bottom: 1px var(--c-grey-500) solid;
 }
 
 .table .table__tr:last-child {
 	border: none;
-}
-
-.table:not(.table--expandable) .table__tr:nth-child(odd) {
-	background-color: var(--c-grey-200);
 }
 
 /* cells */
@@ -68,6 +62,7 @@
 .table .table__th {
 	background-color: var(--c-black);
 	padding: var(--gutter) calc(var(--gutter) * 2);
+	font-variation-settings: 'wght' 600;
 	color: var(--c-white);
 }
 
@@ -89,24 +84,16 @@
 
 /* expandable */
 
-.table.table--expandable .table__tr:not(.table__tr--active):nth-last-child(2) {
-	border-color: transparent;
-}
-
 .table.table--expandable .table__tr:not(.table__tr--expandedcontent) {
 	cursor: pointer;
 }
 
 .table.table--expandable .table__tr:not(.table__tr--expandedcontent):hover {
-	background-color: var(--c-grey-200);
+	background-color: rgba(0, 0, 0, 0.1);
 }
 
 .table.table--expandable .table__tr .table__td .td__unfoldless {
 	display: none;
-}
-
-.table.table--expandable .table__tr.table__tr--active {
-	background-color: var(--c-grey-200);
 }
 
 .table.table--expandable .table__tr.table__tr--active .table__td .td__unfoldmore {
@@ -129,6 +116,17 @@
 	padding: 0;
 }
 
+/* striped */
+
+.table.table--striped:not(.table--expandable) .table__tr:nth-child(even) {
+	background-color: rgba(0, 0, 0, 0.05);
+}
+
+.table.table--striped.table--expandable .table__tr:nth-child(4n + 3),
+.table.table--striped.table--expandable .table__tr:nth-child(4n + 4) {
+	background-color: rgba(0, 0, 0, 0.05);
+}
+
 /* secondary */
 
 .table.table--secondary .table__table {
@@ -141,11 +139,2259 @@
 
 .table.table--secondary .table__th {
 	background-color: transparent;
-	border-bottom: 1px var(--c-grey-500) solid;
+	border-bottom: 2px var(--c-black) solid;
 	color: var(--c-black);
 }
 
 .table.table--secondary .table__tr,
 .table.table--secondary .table__tr:nth-child(odd) {
 	background-color: transparent;
+}
+
+/* border */
+
+.table.table--border .table__mask {
+	border: 1px var(--c-grey-300) solid;
+}
+
+.table.table--border:not(.table--expandable) .table__tr:not(:first-child),
+.table.table--border.table--expandable .table__tr:nth-child(2n + 3) {
+	border-top: 1px var(--c-grey-300) solid;
+}
+
+/* colors */
+
+.table:not(.table--secondary).table--amber-100 .table__th {
+	background-color: var(--c-amber-100);
+}
+
+.table:not(.table--secondary).table--amber-200 .table__th {
+	background-color: var(--c-amber-200);
+}
+
+.table:not(.table--secondary).table--amber-300 .table__th {
+	background-color: var(--c-amber-300);
+}
+
+.table:not(.table--secondary).table--amber-400 .table__th {
+	background-color: var(--c-amber-400);
+}
+
+.table:not(.table--secondary).table--amber-500 .table__th {
+	background-color: var(--c-amber-500);
+}
+
+.table:not(.table--secondary).table--amber-600 .table__th {
+	background-color: var(--c-amber-600);
+}
+
+.table:not(.table--secondary).table--amber-700 .table__th {
+	background-color: var(--c-amber-700);
+}
+
+.table:not(.table--secondary).table--amber-800 .table__th {
+	background-color: var(--c-amber-800);
+}
+
+.table:not(.table--secondary).table--amber-900 .table__th {
+	background-color: var(--c-amber-900);
+}
+
+.table:not(.table--secondary).table--blue-100 .table__th {
+	background-color: var(--c-blue-100);
+}
+
+.table:not(.table--secondary).table--blue-200 .table__th {
+	background-color: var(--c-blue-200);
+}
+
+.table:not(.table--secondary).table--blue-300 .table__th {
+	background-color: var(--c-blue-300);
+}
+
+.table:not(.table--secondary).table--blue-400 .table__th {
+	background-color: var(--c-blue-400);
+}
+
+.table:not(.table--secondary).table--blue-500 .table__th {
+	background-color: var(--c-blue-500);
+}
+
+.table:not(.table--secondary).table--blue-600 .table__th {
+	background-color: var(--c-blue-600);
+}
+
+.table:not(.table--secondary).table--blue-700 .table__th {
+	background-color: var(--c-blue-700);
+}
+
+.table:not(.table--secondary).table--blue-800 .table__th {
+	background-color: var(--c-blue-800);
+}
+
+.table:not(.table--secondary).table--blue-900 .table__th {
+	background-color: var(--c-blue-900);
+}
+
+.table:not(.table--secondary).table--blue-grey-100 .table__th {
+	background-color: var(--c-blue-grey-100);
+}
+
+.table:not(.table--secondary).table--blue-grey-200 .table__th {
+	background-color: var(--c-blue-grey-200);
+}
+
+.table:not(.table--secondary).table--blue-grey-300 .table__th {
+	background-color: var(--c-blue-grey-300);
+}
+
+.table:not(.table--secondary).table--blue-grey-400 .table__th {
+	background-color: var(--c-blue-grey-400);
+}
+
+.table:not(.table--secondary).table--blue-grey-500 .table__th {
+	background-color: var(--c-blue-grey-500);
+}
+
+.table:not(.table--secondary).table--blue-grey-600 .table__th {
+	background-color: var(--c-blue-grey-600);
+}
+
+.table:not(.table--secondary).table--blue-grey-700 .table__th {
+	background-color: var(--c-blue-grey-700);
+}
+
+.table:not(.table--secondary).table--blue-grey-800 .table__th {
+	background-color: var(--c-blue-grey-800);
+}
+
+.table:not(.table--secondary).table--blue-grey-900 .table__th {
+	background-color: var(--c-blue-grey-900);
+}
+
+.table:not(.table--secondary).table--brown-100 .table__th {
+	background-color: var(--c-brown-100);
+}
+
+.table:not(.table--secondary).table--brown-200 .table__th {
+	background-color: var(--c-brown-200);
+}
+
+.table:not(.table--secondary).table--brown-300 .table__th {
+	background-color: var(--c-brown-300);
+}
+
+.table:not(.table--secondary).table--brown-400 .table__th {
+	background-color: var(--c-brown-400);
+}
+
+.table:not(.table--secondary).table--brown-500 .table__th {
+	background-color: var(--c-brown-500);
+}
+
+.table:not(.table--secondary).table--brown-600 .table__th {
+	background-color: var(--c-brown-600);
+}
+
+.table:not(.table--secondary).table--brown-700 .table__th {
+	background-color: var(--c-brown-700);
+}
+
+.table:not(.table--secondary).table--brown-800 .table__th {
+	background-color: var(--c-brown-800);
+}
+
+.table:not(.table--secondary).table--brown-900 .table__th {
+	background-color: var(--c-brown-900);
+}
+
+.table:not(.table--secondary).table--cyan-100 .table__th {
+	background-color: var(--c-cyan-100);
+}
+
+.table:not(.table--secondary).table--cyan-200 .table__th {
+	background-color: var(--c-cyan-200);
+}
+
+.table:not(.table--secondary).table--cyan-300 .table__th {
+	background-color: var(--c-cyan-300);
+}
+
+.table:not(.table--secondary).table--cyan-400 .table__th {
+	background-color: var(--c-cyan-400);
+}
+
+.table:not(.table--secondary).table--cyan-500 .table__th {
+	background-color: var(--c-cyan-500);
+}
+
+.table:not(.table--secondary).table--cyan-600 .table__th {
+	background-color: var(--c-cyan-600);
+}
+
+.table:not(.table--secondary).table--cyan-700 .table__th {
+	background-color: var(--c-cyan-700);
+}
+
+.table:not(.table--secondary).table--cyan-800 .table__th {
+	background-color: var(--c-cyan-800);
+}
+
+.table:not(.table--secondary).table--cyan-900 .table__th {
+	background-color: var(--c-cyan-900);
+}
+
+.table:not(.table--secondary).table--deep-orange-100 .table__th {
+	background-color: var(--c-deep-orange-100);
+}
+
+.table:not(.table--secondary).table--deep-orange-200 .table__th {
+	background-color: var(--c-deep-orange-200);
+}
+
+.table:not(.table--secondary).table--deep-orange-300 .table__th {
+	background-color: var(--c-deep-orange-300);
+}
+
+.table:not(.table--secondary).table--deep-orange-400 .table__th {
+	background-color: var(--c-deep-orange-400);
+}
+
+.table:not(.table--secondary).table--deep-orange-500 .table__th {
+	background-color: var(--c-deep-orange-500);
+}
+
+.table:not(.table--secondary).table--deep-orange-600 .table__th {
+	background-color: var(--c-deep-orange-600);
+}
+
+.table:not(.table--secondary).table--deep-orange-700 .table__th {
+	background-color: var(--c-deep-orange-700);
+}
+
+.table:not(.table--secondary).table--deep-orange-800 .table__th {
+	background-color: var(--c-deep-orange-800);
+}
+
+.table:not(.table--secondary).table--deep-orange-900 .table__th {
+	background-color: var(--c-deep-orange-900);
+}
+
+.table:not(.table--secondary).table--deep-purple-100 .table__th {
+	background-color: var(--c-deep-purple-100);
+}
+
+.table:not(.table--secondary).table--deep-purple-200 .table__th {
+	background-color: var(--c-deep-purple-200);
+}
+
+.table:not(.table--secondary).table--deep-purple-300 .table__th {
+	background-color: var(--c-deep-purple-300);
+}
+
+.table:not(.table--secondary).table--deep-purple-400 .table__th {
+	background-color: var(--c-deep-purple-400);
+}
+
+.table:not(.table--secondary).table--deep-purple-500 .table__th {
+	background-color: var(--c-deep-purple-500);
+}
+
+.table:not(.table--secondary).table--deep-purple-600 .table__th {
+	background-color: var(--c-deep-purple-600);
+}
+
+.table:not(.table--secondary).table--deep-purple-700 .table__th {
+	background-color: var(--c-deep-purple-700);
+}
+
+.table:not(.table--secondary).table--deep-purple-800 .table__th {
+	background-color: var(--c-deep-purple-800);
+}
+
+.table:not(.table--secondary).table--deep-purple-900 .table__th {
+	background-color: var(--c-deep-purple-900);
+}
+
+.table:not(.table--secondary).table--green-100 .table__th {
+	background-color: var(--c-green-100);
+}
+
+.table:not(.table--secondary).table--green-200 .table__th {
+	background-color: var(--c-green-200);
+}
+
+.table:not(.table--secondary).table--green-300 .table__th {
+	background-color: var(--c-green-300);
+}
+
+.table:not(.table--secondary).table--green-400 .table__th {
+	background-color: var(--c-green-400);
+}
+
+.table:not(.table--secondary).table--green-500 .table__th {
+	background-color: var(--c-green-500);
+}
+
+.table:not(.table--secondary).table--green-600 .table__th {
+	background-color: var(--c-green-600);
+}
+
+.table:not(.table--secondary).table--green-700 .table__th {
+	background-color: var(--c-green-700);
+}
+
+.table:not(.table--secondary).table--green-800 .table__th {
+	background-color: var(--c-green-800);
+}
+
+.table:not(.table--secondary).table--green-900 .table__th {
+	background-color: var(--c-green-900);
+}
+
+.table:not(.table--secondary).table--grey-100 .table__th {
+	background-color: var(--c-grey-100);
+}
+
+.table:not(.table--secondary).table--grey-200 .table__th {
+	background-color: var(--c-grey-200);
+}
+
+.table:not(.table--secondary).table--grey-300 .table__th {
+	background-color: var(--c-grey-300);
+}
+
+.table:not(.table--secondary).table--grey-400 .table__th {
+	background-color: var(--c-grey-400);
+}
+
+.table:not(.table--secondary).table--grey-500 .table__th {
+	background-color: var(--c-grey-500);
+}
+
+.table:not(.table--secondary).table--grey-600 .table__th {
+	background-color: var(--c-grey-600);
+}
+
+.table:not(.table--secondary).table--grey-700 .table__th {
+	background-color: var(--c-grey-700);
+}
+
+.table:not(.table--secondary).table--grey-800 .table__th {
+	background-color: var(--c-grey-800);
+}
+
+.table:not(.table--secondary).table--grey-900 .table__th {
+	background-color: var(--c-grey-900);
+}
+
+.table:not(.table--secondary).table--indigo-100 .table__th {
+	background-color: var(--c-indigo-100);
+}
+
+.table:not(.table--secondary).table--indigo-200 .table__th {
+	background-color: var(--c-indigo-200);
+}
+
+.table:not(.table--secondary).table--indigo-300 .table__th {
+	background-color: var(--c-indigo-300);
+}
+
+.table:not(.table--secondary).table--indigo-400 .table__th {
+	background-color: var(--c-indigo-400);
+}
+
+.table:not(.table--secondary).table--indigo-500 .table__th {
+	background-color: var(--c-indigo-500);
+}
+
+.table:not(.table--secondary).table--indigo-600 .table__th {
+	background-color: var(--c-indigo-600);
+}
+
+.table:not(.table--secondary).table--indigo-700 .table__th {
+	background-color: var(--c-indigo-700);
+}
+
+.table:not(.table--secondary).table--indigo-800 .table__th {
+	background-color: var(--c-indigo-800);
+}
+
+.table:not(.table--secondary).table--indigo-900 .table__th {
+	background-color: var(--c-indigo-900);
+}
+
+.table:not(.table--secondary).table--light-blue-100 .table__th {
+	background-color: var(--c-light-blue-100);
+}
+
+.table:not(.table--secondary).table--light-blue-200 .table__th {
+	background-color: var(--c-light-blue-200);
+}
+
+.table:not(.table--secondary).table--light-blue-300 .table__th {
+	background-color: var(--c-light-blue-300);
+}
+
+.table:not(.table--secondary).table--light-blue-400 .table__th {
+	background-color: var(--c-light-blue-400);
+}
+
+.table:not(.table--secondary).table--light-blue-500 .table__th {
+	background-color: var(--c-light-blue-500);
+}
+
+.table:not(.table--secondary).table--light-blue-600 .table__th {
+	background-color: var(--c-light-blue-600);
+}
+
+.table:not(.table--secondary).table--light-blue-700 .table__th {
+	background-color: var(--c-light-blue-700);
+}
+
+.table:not(.table--secondary).table--light-blue-800 .table__th {
+	background-color: var(--c-light-blue-800);
+}
+
+.table:not(.table--secondary).table--light-blue-900 .table__th {
+	background-color: var(--c-light-blue-900);
+}
+
+.table:not(.table--secondary).table--light-green-100 .table__th {
+	background-color: var(--c-light-green-100);
+}
+
+.table:not(.table--secondary).table--light-green-200 .table__th {
+	background-color: var(--c-light-green-200);
+}
+
+.table:not(.table--secondary).table--light-green-300 .table__th {
+	background-color: var(--c-light-green-300);
+}
+
+.table:not(.table--secondary).table--light-green-400 .table__th {
+	background-color: var(--c-light-green-400);
+}
+
+.table:not(.table--secondary).table--light-green-500 .table__th {
+	background-color: var(--c-light-green-500);
+}
+
+.table:not(.table--secondary).table--light-green-600 .table__th {
+	background-color: var(--c-light-green-600);
+}
+
+.table:not(.table--secondary).table--light-green-700 .table__th {
+	background-color: var(--c-light-green-700);
+}
+
+.table:not(.table--secondary).table--light-green-800 .table__th {
+	background-color: var(--c-light-green-800);
+}
+
+.table:not(.table--secondary).table--light-green-900 .table__th {
+	background-color: var(--c-light-green-900);
+}
+
+.table:not(.table--secondary).table--lime-100 .table__th {
+	background-color: var(--c-lime-100);
+}
+
+.table:not(.table--secondary).table--lime-200 .table__th {
+	background-color: var(--c-lime-200);
+}
+
+.table:not(.table--secondary).table--lime-300 .table__th {
+	background-color: var(--c-lime-300);
+}
+
+.table:not(.table--secondary).table--lime-400 .table__th {
+	background-color: var(--c-lime-400);
+}
+
+.table:not(.table--secondary).table--lime-500 .table__th {
+	background-color: var(--c-lime-500);
+}
+
+.table:not(.table--secondary).table--lime-600 .table__th {
+	background-color: var(--c-lime-600);
+}
+
+.table:not(.table--secondary).table--lime-700 .table__th {
+	background-color: var(--c-lime-700);
+}
+
+.table:not(.table--secondary).table--lime-800 .table__th {
+	background-color: var(--c-lime-800);
+}
+
+.table:not(.table--secondary).table--lime-900 .table__th {
+	background-color: var(--c-lime-900);
+}
+
+.table:not(.table--secondary).table--orange-100 .table__th {
+	background-color: var(--c-orange-100);
+}
+
+.table:not(.table--secondary).table--orange-200 .table__th {
+	background-color: var(--c-orange-200);
+}
+
+.table:not(.table--secondary).table--orange-300 .table__th {
+	background-color: var(--c-orange-300);
+}
+
+.table:not(.table--secondary).table--orange-400 .table__th {
+	background-color: var(--c-orange-400);
+}
+
+.table:not(.table--secondary).table--orange-500 .table__th {
+	background-color: var(--c-orange-500);
+}
+
+.table:not(.table--secondary).table--orange-600 .table__th {
+	background-color: var(--c-orange-600);
+}
+
+.table:not(.table--secondary).table--orange-700 .table__th {
+	background-color: var(--c-orange-700);
+}
+
+.table:not(.table--secondary).table--orange-800 .table__th {
+	background-color: var(--c-orange-800);
+}
+
+.table:not(.table--secondary).table--orange-900 .table__th {
+	background-color: var(--c-orange-900);
+}
+
+.table:not(.table--secondary).table--pink-100 .table__th {
+	background-color: var(--c-pink-100);
+}
+
+.table:not(.table--secondary).table--pink-200 .table__th {
+	background-color: var(--c-pink-200);
+}
+
+.table:not(.table--secondary).table--pink-300 .table__th {
+	background-color: var(--c-pink-300);
+}
+
+.table:not(.table--secondary).table--pink-400 .table__th {
+	background-color: var(--c-pink-400);
+}
+
+.table:not(.table--secondary).table--pink-500 .table__th {
+	background-color: var(--c-pink-500);
+}
+
+.table:not(.table--secondary).table--pink-600 .table__th {
+	background-color: var(--c-pink-600);
+}
+
+.table:not(.table--secondary).table--pink-700 .table__th {
+	background-color: var(--c-pink-700);
+}
+
+.table:not(.table--secondary).table--pink-800 .table__th {
+	background-color: var(--c-pink-800);
+}
+
+.table:not(.table--secondary).table--pink-900 .table__th {
+	background-color: var(--c-pink-900);
+}
+
+.table:not(.table--secondary).table--purple-100 .table__th {
+	background-color: var(--c-purple-100);
+}
+
+.table:not(.table--secondary).table--purple-200 .table__th {
+	background-color: var(--c-purple-200);
+}
+
+.table:not(.table--secondary).table--purple-300 .table__th {
+	background-color: var(--c-purple-300);
+}
+
+.table:not(.table--secondary).table--purple-400 .table__th {
+	background-color: var(--c-purple-400);
+}
+
+.table:not(.table--secondary).table--purple-500 .table__th {
+	background-color: var(--c-purple-500);
+}
+
+.table:not(.table--secondary).table--purple-600 .table__th {
+	background-color: var(--c-purple-600);
+}
+
+.table:not(.table--secondary).table--purple-700 .table__th {
+	background-color: var(--c-purple-700);
+}
+
+.table:not(.table--secondary).table--purple-800 .table__th {
+	background-color: var(--c-purple-800);
+}
+
+.table:not(.table--secondary).table--purple-900 .table__th {
+	background-color: var(--c-purple-900);
+}
+
+.table:not(.table--secondary).table--red-100 .table__th {
+	background-color: var(--c-red-100);
+}
+
+.table:not(.table--secondary).table--red-200 .table__th {
+	background-color: var(--c-red-200);
+}
+
+.table:not(.table--secondary).table--red-300 .table__th {
+	background-color: var(--c-red-300);
+}
+
+.table:not(.table--secondary).table--red-400 .table__th {
+	background-color: var(--c-red-400);
+}
+
+.table:not(.table--secondary).table--red-500 .table__th {
+	background-color: var(--c-red-500);
+}
+
+.table:not(.table--secondary).table--red-600 .table__th {
+	background-color: var(--c-red-600);
+}
+
+.table:not(.table--secondary).table--red-700 .table__th {
+	background-color: var(--c-red-700);
+}
+
+.table:not(.table--secondary).table--red-800 .table__th {
+	background-color: var(--c-red-800);
+}
+
+.table:not(.table--secondary).table--red-900 .table__th {
+	background-color: var(--c-red-900);
+}
+
+.table:not(.table--secondary).table--teal-100 .table__th {
+	background-color: var(--c-teal-100);
+}
+
+.table:not(.table--secondary).table--teal-200 .table__th {
+	background-color: var(--c-teal-200);
+}
+
+.table:not(.table--secondary).table--teal-300 .table__th {
+	background-color: var(--c-teal-300);
+}
+
+.table:not(.table--secondary).table--teal-400 .table__th {
+	background-color: var(--c-teal-400);
+}
+
+.table:not(.table--secondary).table--teal-500 .table__th {
+	background-color: var(--c-teal-500);
+}
+
+.table:not(.table--secondary).table--teal-600 .table__th {
+	background-color: var(--c-teal-600);
+}
+
+.table:not(.table--secondary).table--teal-700 .table__th {
+	background-color: var(--c-teal-700);
+}
+
+.table:not(.table--secondary).table--teal-800 .table__th {
+	background-color: var(--c-teal-800);
+}
+
+.table:not(.table--secondary).table--teal-900 .table__th {
+	background-color: var(--c-teal-900);
+}
+
+.table:not(.table--secondary).table--yellow-100 .table__th {
+	background-color: var(--c-yellow-100);
+}
+
+.table:not(.table--secondary).table--yellow-200 .table__th {
+	background-color: var(--c-yellow-200);
+}
+
+.table:not(.table--secondary).table--yellow-300 .table__th {
+	background-color: var(--c-yellow-300);
+}
+
+.table:not(.table--secondary).table--yellow-400 .table__th {
+	background-color: var(--c-yellow-400);
+}
+
+.table:not(.table--secondary).table--yellow-500 .table__th {
+	background-color: var(--c-yellow-500);
+}
+
+.table:not(.table--secondary).table--yellow-600 .table__th {
+	background-color: var(--c-yellow-600);
+}
+
+.table:not(.table--secondary).table--yellow-700 .table__th {
+	background-color: var(--c-yellow-700);
+}
+
+.table:not(.table--secondary).table--yellow-800 .table__th {
+	background-color: var(--c-yellow-800);
+}
+
+.table:not(.table--secondary).table--yellow-900 .table__th {
+	background-color: var(--c-yellow-900);
+}
+
+/* secondary colors */
+
+.table.table--secondary.table--amber-100,
+.table.table--secondary.table--amber-100 .table__th {
+	color: var(--c-amber-100);
+}
+
+.table.table--secondary.table--amber-100 .table__th {
+	border-color: var(--c-amber-100);
+}
+
+.table.table--secondary.table--amber-200,
+.table.table--secondary.table--amber-200 .table__th {
+	color: var(--c-amber-200);
+}
+
+.table.table--secondary.table--amber-200 .table__th {
+	border-color: var(--c-amber-200);
+}
+
+.table.table--secondary.table--amber-300,
+.table.table--secondary.table--amber-300 .table__th {
+	color: var(--c-amber-300);
+}
+
+.table.table--secondary.table--amber-300 .table__th {
+	border-color: var(--c-amber-300);
+}
+
+.table.table--secondary.table--amber-400,
+.table.table--secondary.table--amber-400 .table__th {
+	color: var(--c-amber-400);
+}
+
+.table.table--secondary.table--amber-400 .table__th {
+	border-color: var(--c-amber-400);
+}
+
+.table.table--secondary.table--amber-500,
+.table.table--secondary.table--amber-500 .table__th {
+	color: var(--c-amber-500);
+}
+
+.table.table--secondary.table--amber-500 .table__th {
+	border-color: var(--c-amber-500);
+}
+
+.table.table--secondary.table--amber-600,
+.table.table--secondary.table--amber-600 .table__th {
+	color: var(--c-amber-600);
+}
+
+.table.table--secondary.table--amber-600 .table__th {
+	border-color: var(--c-amber-600);
+}
+
+.table.table--secondary.table--amber-700,
+.table.table--secondary.table--amber-700 .table__th {
+	color: var(--c-amber-700);
+}
+
+.table.table--secondary.table--amber-700 .table__th {
+	border-color: var(--c-amber-700);
+}
+
+.table.table--secondary.table--amber-800,
+.table.table--secondary.table--amber-800 .table__th {
+	color: var(--c-amber-800);
+}
+
+.table.table--secondary.table--amber-800 .table__th {
+	border-color: var(--c-amber-800);
+}
+
+.table.table--secondary.table--amber-900,
+.table.table--secondary.table--amber-900 .table__th {
+	color: var(--c-amber-900);
+}
+
+.table.table--secondary.table--amber-900 .table__th {
+	border-color: var(--c-amber-900);
+}
+
+.table.table--secondary.table--blue-100,
+.table.table--secondary.table--blue-100 .table__th {
+	color: var(--c-blue-100);
+}
+
+.table.table--secondary.table--blue-100 .table__th {
+	border-color: var(--c-blue-100);
+}
+
+.table.table--secondary.table--blue-200,
+.table.table--secondary.table--blue-200 .table__th {
+	color: var(--c-blue-200);
+}
+
+.table.table--secondary.table--blue-200 .table__th {
+	border-color: var(--c-blue-200);
+}
+
+.table.table--secondary.table--blue-300,
+.table.table--secondary.table--blue-300 .table__th {
+	color: var(--c-blue-300);
+}
+
+.table.table--secondary.table--blue-300 .table__th {
+	border-color: var(--c-blue-300);
+}
+
+.table.table--secondary.table--blue-400,
+.table.table--secondary.table--blue-400 .table__th {
+	color: var(--c-blue-400);
+}
+
+.table.table--secondary.table--blue-400 .table__th {
+	border-color: var(--c-blue-400);
+}
+
+.table.table--secondary.table--blue-500,
+.table.table--secondary.table--blue-500 .table__th {
+	color: var(--c-blue-500);
+}
+
+.table.table--secondary.table--blue-500 .table__th {
+	border-color: var(--c-blue-500);
+}
+
+.table.table--secondary.table--blue-600,
+.table.table--secondary.table--blue-600 .table__th {
+	color: var(--c-blue-600);
+}
+
+.table.table--secondary.table--blue-600 .table__th {
+	border-color: var(--c-blue-600);
+}
+
+.table.table--secondary.table--blue-700,
+.table.table--secondary.table--blue-700 .table__th {
+	color: var(--c-blue-700);
+}
+
+.table.table--secondary.table--blue-700 .table__th {
+	border-color: var(--c-blue-700);
+}
+
+.table.table--secondary.table--blue-800,
+.table.table--secondary.table--blue-800 .table__th {
+	color: var(--c-blue-800);
+}
+
+.table.table--secondary.table--blue-800 .table__th {
+	border-color: var(--c-blue-800);
+}
+
+.table.table--secondary.table--blue-900,
+.table.table--secondary.table--blue-900 .table__th {
+	color: var(--c-blue-900);
+}
+
+.table.table--secondary.table--blue-900 .table__th {
+	border-color: var(--c-blue-900);
+}
+
+.table.table--secondary.table--blue-grey-100,
+.table.table--secondary.table--blue-grey-100 .table__th {
+	color: var(--c-blue-grey-100);
+}
+
+.table.table--secondary.table--blue-grey-100 .table__th {
+	border-color: var(--c-blue-grey-100);
+}
+
+.table.table--secondary.table--blue-grey-200,
+.table.table--secondary.table--blue-grey-200 .table__th {
+	color: var(--c-blue-grey-200);
+}
+
+.table.table--secondary.table--blue-grey-200 .table__th {
+	border-color: var(--c-blue-grey-200);
+}
+
+.table.table--secondary.table--blue-grey-300,
+.table.table--secondary.table--blue-grey-300 .table__th {
+	color: var(--c-blue-grey-300);
+}
+
+.table.table--secondary.table--blue-grey-300 .table__th {
+	border-color: var(--c-blue-grey-300);
+}
+
+.table.table--secondary.table--blue-grey-400,
+.table.table--secondary.table--blue-grey-400 .table__th {
+	color: var(--c-blue-grey-400);
+}
+
+.table.table--secondary.table--blue-grey-400 .table__th {
+	border-color: var(--c-blue-grey-400);
+}
+
+.table.table--secondary.table--blue-grey-500,
+.table.table--secondary.table--blue-grey-500 .table__th {
+	color: var(--c-blue-grey-500);
+}
+
+.table.table--secondary.table--blue-grey-500 .table__th {
+	border-color: var(--c-blue-grey-500);
+}
+
+.table.table--secondary.table--blue-grey-600,
+.table.table--secondary.table--blue-grey-600 .table__th {
+	color: var(--c-blue-grey-600);
+}
+
+.table.table--secondary.table--blue-grey-600 .table__th {
+	border-color: var(--c-blue-grey-600);
+}
+
+.table.table--secondary.table--blue-grey-700,
+.table.table--secondary.table--blue-grey-700 .table__th {
+	color: var(--c-blue-grey-700);
+}
+
+.table.table--secondary.table--blue-grey-700 .table__th {
+	border-color: var(--c-blue-grey-700);
+}
+
+.table.table--secondary.table--blue-grey-800,
+.table.table--secondary.table--blue-grey-800 .table__th {
+	color: var(--c-blue-grey-800);
+}
+
+.table.table--secondary.table--blue-grey-800 .table__th {
+	border-color: var(--c-blue-grey-800);
+}
+
+.table.table--secondary.table--blue-grey-900,
+.table.table--secondary.table--blue-grey-900 .table__th {
+	color: var(--c-blue-grey-900);
+}
+
+.table.table--secondary.table--blue-grey-900 .table__th {
+	border-color: var(--c-blue-grey-900);
+}
+
+.table.table--secondary.table--brown-100,
+.table.table--secondary.table--brown-100 .table__th {
+	color: var(--c-brown-100);
+}
+
+.table.table--secondary.table--brown-100 .table__th {
+	border-color: var(--c-brown-100);
+}
+
+.table.table--secondary.table--brown-200,
+.table.table--secondary.table--brown-200 .table__th {
+	color: var(--c-brown-200);
+}
+
+.table.table--secondary.table--brown-200 .table__th {
+	border-color: var(--c-brown-200);
+}
+
+.table.table--secondary.table--brown-300,
+.table.table--secondary.table--brown-300 .table__th {
+	color: var(--c-brown-300);
+}
+
+.table.table--secondary.table--brown-300 .table__th {
+	border-color: var(--c-brown-300);
+}
+
+.table.table--secondary.table--brown-400,
+.table.table--secondary.table--brown-400 .table__th {
+	color: var(--c-brown-400);
+}
+
+.table.table--secondary.table--brown-400 .table__th {
+	border-color: var(--c-brown-400);
+}
+
+.table.table--secondary.table--brown-500,
+.table.table--secondary.table--brown-500 .table__th {
+	color: var(--c-brown-500);
+}
+
+.table.table--secondary.table--brown-500 .table__th {
+	border-color: var(--c-brown-500);
+}
+
+.table.table--secondary.table--brown-600,
+.table.table--secondary.table--brown-600 .table__th {
+	color: var(--c-brown-600);
+}
+
+.table.table--secondary.table--brown-600 .table__th {
+	border-color: var(--c-brown-600);
+}
+
+.table.table--secondary.table--brown-700,
+.table.table--secondary.table--brown-700 .table__th {
+	color: var(--c-brown-700);
+}
+
+.table.table--secondary.table--brown-700 .table__th {
+	border-color: var(--c-brown-700);
+}
+
+.table.table--secondary.table--brown-800,
+.table.table--secondary.table--brown-800 .table__th {
+	color: var(--c-brown-800);
+}
+
+.table.table--secondary.table--brown-800 .table__th {
+	border-color: var(--c-brown-800);
+}
+
+.table.table--secondary.table--brown-900,
+.table.table--secondary.table--brown-900 .table__th {
+	color: var(--c-brown-900);
+}
+
+.table.table--secondary.table--brown-900 .table__th {
+	border-color: var(--c-brown-900);
+}
+
+.table.table--secondary.table--cyan-100,
+.table.table--secondary.table--cyan-100 .table__th {
+	color: var(--c-cyan-100);
+}
+
+.table.table--secondary.table--cyan-100 .table__th {
+	border-color: var(--c-cyan-100);
+}
+
+.table.table--secondary.table--cyan-200,
+.table.table--secondary.table--cyan-200 .table__th {
+	color: var(--c-cyan-200);
+}
+
+.table.table--secondary.table--cyan-200 .table__th {
+	border-color: var(--c-cyan-200);
+}
+
+.table.table--secondary.table--cyan-300,
+.table.table--secondary.table--cyan-300 .table__th {
+	color: var(--c-cyan-300);
+}
+
+.table.table--secondary.table--cyan-300 .table__th {
+	border-color: var(--c-cyan-300);
+}
+
+.table.table--secondary.table--cyan-400,
+.table.table--secondary.table--cyan-400 .table__th {
+	color: var(--c-cyan-400);
+}
+
+.table.table--secondary.table--cyan-400 .table__th {
+	border-color: var(--c-cyan-400);
+}
+
+.table.table--secondary.table--cyan-500,
+.table.table--secondary.table--cyan-500 .table__th {
+	color: var(--c-cyan-500);
+}
+
+.table.table--secondary.table--cyan-500 .table__th {
+	border-color: var(--c-cyan-500);
+}
+
+.table.table--secondary.table--cyan-600,
+.table.table--secondary.table--cyan-600 .table__th {
+	color: var(--c-cyan-600);
+}
+
+.table.table--secondary.table--cyan-600 .table__th {
+	border-color: var(--c-cyan-600);
+}
+
+.table.table--secondary.table--cyan-700,
+.table.table--secondary.table--cyan-700 .table__th {
+	color: var(--c-cyan-700);
+}
+
+.table.table--secondary.table--cyan-700 .table__th {
+	border-color: var(--c-cyan-700);
+}
+
+.table.table--secondary.table--cyan-800,
+.table.table--secondary.table--cyan-800 .table__th {
+	color: var(--c-cyan-800);
+}
+
+.table.table--secondary.table--cyan-800 .table__th {
+	border-color: var(--c-cyan-800);
+}
+
+.table.table--secondary.table--cyan-900,
+.table.table--secondary.table--cyan-900 .table__th {
+	color: var(--c-cyan-900);
+}
+
+.table.table--secondary.table--cyan-900 .table__th {
+	border-color: var(--c-cyan-900);
+}
+
+.table.table--secondary.table--deep-orange-100,
+.table.table--secondary.table--deep-orange-100 .table__th {
+	color: var(--c-deep-orange-100);
+}
+
+.table.table--secondary.table--deep-orange-100 .table__th {
+	border-color: var(--c-deep-orange-100);
+}
+
+.table.table--secondary.table--deep-orange-200,
+.table.table--secondary.table--deep-orange-200 .table__th {
+	color: var(--c-deep-orange-200);
+}
+
+.table.table--secondary.table--deep-orange-200 .table__th {
+	border-color: var(--c-deep-orange-200);
+}
+
+.table.table--secondary.table--deep-orange-300,
+.table.table--secondary.table--deep-orange-300 .table__th {
+	color: var(--c-deep-orange-300);
+}
+
+.table.table--secondary.table--deep-orange-300 .table__th {
+	border-color: var(--c-deep-orange-300);
+}
+
+.table.table--secondary.table--deep-orange-400,
+.table.table--secondary.table--deep-orange-400 .table__th {
+	color: var(--c-deep-orange-400);
+}
+
+.table.table--secondary.table--deep-orange-400 .table__th {
+	border-color: var(--c-deep-orange-400);
+}
+
+.table.table--secondary.table--deep-orange-500,
+.table.table--secondary.table--deep-orange-500 .table__th {
+	color: var(--c-deep-orange-500);
+}
+
+.table.table--secondary.table--deep-orange-500 .table__th {
+	border-color: var(--c-deep-orange-500);
+}
+
+.table.table--secondary.table--deep-orange-600,
+.table.table--secondary.table--deep-orange-600 .table__th {
+	color: var(--c-deep-orange-600);
+}
+
+.table.table--secondary.table--deep-orange-600 .table__th {
+	border-color: var(--c-deep-orange-600);
+}
+
+.table.table--secondary.table--deep-orange-700,
+.table.table--secondary.table--deep-orange-700 .table__th {
+	color: var(--c-deep-orange-700);
+}
+
+.table.table--secondary.table--deep-orange-700 .table__th {
+	border-color: var(--c-deep-orange-700);
+}
+
+.table.table--secondary.table--deep-orange-800,
+.table.table--secondary.table--deep-orange-800 .table__th {
+	color: var(--c-deep-orange-800);
+}
+
+.table.table--secondary.table--deep-orange-800 .table__th {
+	border-color: var(--c-deep-orange-800);
+}
+
+.table.table--secondary.table--deep-orange-900,
+.table.table--secondary.table--deep-orange-900 .table__th {
+	color: var(--c-deep-orange-900);
+}
+
+.table.table--secondary.table--deep-orange-900 .table__th {
+	border-color: var(--c-deep-orange-900);
+}
+
+.table.table--secondary.table--deep-purple-100,
+.table.table--secondary.table--deep-purple-100 .table__th {
+	color: var(--c-deep-purple-100);
+}
+
+.table.table--secondary.table--deep-purple-100 .table__th {
+	border-color: var(--c-deep-purple-100);
+}
+
+.table.table--secondary.table--deep-purple-200,
+.table.table--secondary.table--deep-purple-200 .table__th {
+	color: var(--c-deep-purple-200);
+}
+
+.table.table--secondary.table--deep-purple-200 .table__th {
+	border-color: var(--c-deep-purple-200);
+}
+
+.table.table--secondary.table--deep-purple-300,
+.table.table--secondary.table--deep-purple-300 .table__th {
+	color: var(--c-deep-purple-300);
+}
+
+.table.table--secondary.table--deep-purple-300 .table__th {
+	border-color: var(--c-deep-purple-300);
+}
+
+.table.table--secondary.table--deep-purple-400,
+.table.table--secondary.table--deep-purple-400 .table__th {
+	color: var(--c-deep-purple-400);
+}
+
+.table.table--secondary.table--deep-purple-400 .table__th {
+	border-color: var(--c-deep-purple-400);
+}
+
+.table.table--secondary.table--deep-purple-500,
+.table.table--secondary.table--deep-purple-500 .table__th {
+	color: var(--c-deep-purple-500);
+}
+
+.table.table--secondary.table--deep-purple-500 .table__th {
+	border-color: var(--c-deep-purple-500);
+}
+
+.table.table--secondary.table--deep-purple-600,
+.table.table--secondary.table--deep-purple-600 .table__th {
+	color: var(--c-deep-purple-600);
+}
+
+.table.table--secondary.table--deep-purple-600 .table__th {
+	border-color: var(--c-deep-purple-600);
+}
+
+.table.table--secondary.table--deep-purple-700,
+.table.table--secondary.table--deep-purple-700 .table__th {
+	color: var(--c-deep-purple-700);
+}
+
+.table.table--secondary.table--deep-purple-700 .table__th {
+	border-color: var(--c-deep-purple-700);
+}
+
+.table.table--secondary.table--deep-purple-800,
+.table.table--secondary.table--deep-purple-800 .table__th {
+	color: var(--c-deep-purple-800);
+}
+
+.table.table--secondary.table--deep-purple-800 .table__th {
+	border-color: var(--c-deep-purple-800);
+}
+
+.table.table--secondary.table--deep-purple-900,
+.table.table--secondary.table--deep-purple-900 .table__th {
+	color: var(--c-deep-purple-900);
+}
+
+.table.table--secondary.table--deep-purple-900 .table__th {
+	border-color: var(--c-deep-purple-900);
+}
+
+.table.table--secondary.table--green-100,
+.table.table--secondary.table--green-100 .table__th {
+	color: var(--c-green-100);
+}
+
+.table.table--secondary.table--green-100 .table__th {
+	border-color: var(--c-green-100);
+}
+
+.table.table--secondary.table--green-200,
+.table.table--secondary.table--green-200 .table__th {
+	color: var(--c-green-200);
+}
+
+.table.table--secondary.table--green-200 .table__th {
+	border-color: var(--c-green-200);
+}
+
+.table.table--secondary.table--green-300,
+.table.table--secondary.table--green-300 .table__th {
+	color: var(--c-green-300);
+}
+
+.table.table--secondary.table--green-300 .table__th {
+	border-color: var(--c-green-300);
+}
+
+.table.table--secondary.table--green-400,
+.table.table--secondary.table--green-400 .table__th {
+	color: var(--c-green-400);
+}
+
+.table.table--secondary.table--green-400 .table__th {
+	border-color: var(--c-green-400);
+}
+
+.table.table--secondary.table--green-500,
+.table.table--secondary.table--green-500 .table__th {
+	color: var(--c-green-500);
+}
+
+.table.table--secondary.table--green-500 .table__th {
+	border-color: var(--c-green-500);
+}
+
+.table.table--secondary.table--green-600,
+.table.table--secondary.table--green-600 .table__th {
+	color: var(--c-green-600);
+}
+
+.table.table--secondary.table--green-600 .table__th {
+	border-color: var(--c-green-600);
+}
+
+.table.table--secondary.table--green-700,
+.table.table--secondary.table--green-700 .table__th {
+	color: var(--c-green-700);
+}
+
+.table.table--secondary.table--green-700 .table__th {
+	border-color: var(--c-green-700);
+}
+
+.table.table--secondary.table--green-800,
+.table.table--secondary.table--green-800 .table__th {
+	color: var(--c-green-800);
+}
+
+.table.table--secondary.table--green-800 .table__th {
+	border-color: var(--c-green-800);
+}
+
+.table.table--secondary.table--green-900,
+.table.table--secondary.table--green-900 .table__th {
+	color: var(--c-green-900);
+}
+
+.table.table--secondary.table--green-900 .table__th {
+	border-color: var(--c-green-900);
+}
+
+.table.table--secondary.table--grey-100,
+.table.table--secondary.table--grey-100 .table__th {
+	color: var(--c-grey-100);
+}
+
+.table.table--secondary.table--grey-100 .table__th {
+	border-color: var(--c-grey-100);
+}
+
+.table.table--secondary.table--grey-200,
+.table.table--secondary.table--grey-200 .table__th {
+	color: var(--c-grey-200);
+}
+
+.table.table--secondary.table--grey-200 .table__th {
+	border-color: var(--c-grey-200);
+}
+
+.table.table--secondary.table--grey-300,
+.table.table--secondary.table--grey-300 .table__th {
+	color: var(--c-grey-300);
+}
+
+.table.table--secondary.table--grey-300 .table__th {
+	border-color: var(--c-grey-300);
+}
+
+.table.table--secondary.table--grey-400,
+.table.table--secondary.table--grey-400 .table__th {
+	color: var(--c-grey-400);
+}
+
+.table.table--secondary.table--grey-400 .table__th {
+	border-color: var(--c-grey-400);
+}
+
+.table.table--secondary.table--grey-500,
+.table.table--secondary.table--grey-500 .table__th {
+	color: var(--c-grey-500);
+}
+
+.table.table--secondary.table--grey-500 .table__th {
+	border-color: var(--c-grey-500);
+}
+
+.table.table--secondary.table--grey-600,
+.table.table--secondary.table--grey-600 .table__th {
+	color: var(--c-grey-600);
+}
+
+.table.table--secondary.table--grey-600 .table__th {
+	border-color: var(--c-grey-600);
+}
+
+.table.table--secondary.table--grey-700,
+.table.table--secondary.table--grey-700 .table__th {
+	color: var(--c-grey-700);
+}
+
+.table.table--secondary.table--grey-700 .table__th {
+	border-color: var(--c-grey-700);
+}
+
+.table.table--secondary.table--grey-800,
+.table.table--secondary.table--grey-800 .table__th {
+	color: var(--c-grey-800);
+}
+
+.table.table--secondary.table--grey-800 .table__th {
+	border-color: var(--c-grey-800);
+}
+
+.table.table--secondary.table--grey-900,
+.table.table--secondary.table--grey-900 .table__th {
+	color: var(--c-grey-900);
+}
+
+.table.table--secondary.table--grey-900 .table__th {
+	border-color: var(--c-grey-900);
+}
+
+.table.table--secondary.table--indigo-100,
+.table.table--secondary.table--indigo-100 .table__th {
+	color: var(--c-indigo-100);
+}
+
+.table.table--secondary.table--indigo-100 .table__th {
+	border-color: var(--c-indigo-100);
+}
+
+.table.table--secondary.table--indigo-200,
+.table.table--secondary.table--indigo-200 .table__th {
+	color: var(--c-indigo-200);
+}
+
+.table.table--secondary.table--indigo-200 .table__th {
+	border-color: var(--c-indigo-200);
+}
+
+.table.table--secondary.table--indigo-300,
+.table.table--secondary.table--indigo-300 .table__th {
+	color: var(--c-indigo-300);
+}
+
+.table.table--secondary.table--indigo-300 .table__th {
+	border-color: var(--c-indigo-300);
+}
+
+.table.table--secondary.table--indigo-400,
+.table.table--secondary.table--indigo-400 .table__th {
+	color: var(--c-indigo-400);
+}
+
+.table.table--secondary.table--indigo-400 .table__th {
+	border-color: var(--c-indigo-400);
+}
+
+.table.table--secondary.table--indigo-500,
+.table.table--secondary.table--indigo-500 .table__th {
+	color: var(--c-indigo-500);
+}
+
+.table.table--secondary.table--indigo-500 .table__th {
+	border-color: var(--c-indigo-500);
+}
+
+.table.table--secondary.table--indigo-600,
+.table.table--secondary.table--indigo-600 .table__th {
+	color: var(--c-indigo-600);
+}
+
+.table.table--secondary.table--indigo-600 .table__th {
+	border-color: var(--c-indigo-600);
+}
+
+.table.table--secondary.table--indigo-700,
+.table.table--secondary.table--indigo-700 .table__th {
+	color: var(--c-indigo-700);
+}
+
+.table.table--secondary.table--indigo-700 .table__th {
+	border-color: var(--c-indigo-700);
+}
+
+.table.table--secondary.table--indigo-800,
+.table.table--secondary.table--indigo-800 .table__th {
+	color: var(--c-indigo-800);
+}
+
+.table.table--secondary.table--indigo-800 .table__th {
+	border-color: var(--c-indigo-800);
+}
+
+.table.table--secondary.table--indigo-900,
+.table.table--secondary.table--indigo-900 .table__th {
+	color: var(--c-indigo-900);
+}
+
+.table.table--secondary.table--indigo-900 .table__th {
+	border-color: var(--c-indigo-900);
+}
+
+.table.table--secondary.table--light-blue-100,
+.table.table--secondary.table--light-blue-100 .table__th {
+	color: var(--c-light-blue-100);
+}
+
+.table.table--secondary.table--light-blue-100 .table__th {
+	border-color: var(--c-light-blue-100);
+}
+
+.table.table--secondary.table--light-blue-200,
+.table.table--secondary.table--light-blue-200 .table__th {
+	color: var(--c-light-blue-200);
+}
+
+.table.table--secondary.table--light-blue-200 .table__th {
+	border-color: var(--c-light-blue-200);
+}
+
+.table.table--secondary.table--light-blue-300,
+.table.table--secondary.table--light-blue-300 .table__th {
+	color: var(--c-light-blue-300);
+}
+
+.table.table--secondary.table--light-blue-300 .table__th {
+	border-color: var(--c-light-blue-300);
+}
+
+.table.table--secondary.table--light-blue-400,
+.table.table--secondary.table--light-blue-400 .table__th {
+	color: var(--c-light-blue-400);
+}
+
+.table.table--secondary.table--light-blue-400 .table__th {
+	border-color: var(--c-light-blue-400);
+}
+
+.table.table--secondary.table--light-blue-500,
+.table.table--secondary.table--light-blue-500 .table__th {
+	color: var(--c-light-blue-500);
+}
+
+.table.table--secondary.table--light-blue-500 .table__th {
+	border-color: var(--c-light-blue-500);
+}
+
+.table.table--secondary.table--light-blue-600,
+.table.table--secondary.table--light-blue-600 .table__th {
+	color: var(--c-light-blue-600);
+}
+
+.table.table--secondary.table--light-blue-600 .table__th {
+	border-color: var(--c-light-blue-600);
+}
+
+.table.table--secondary.table--light-blue-700,
+.table.table--secondary.table--light-blue-700 .table__th {
+	color: var(--c-light-blue-700);
+}
+
+.table.table--secondary.table--light-blue-700 .table__th {
+	border-color: var(--c-light-blue-700);
+}
+
+.table.table--secondary.table--light-blue-800,
+.table.table--secondary.table--light-blue-800 .table__th {
+	color: var(--c-light-blue-800);
+}
+
+.table.table--secondary.table--light-blue-800 .table__th {
+	border-color: var(--c-light-blue-800);
+}
+
+.table.table--secondary.table--light-blue-900,
+.table.table--secondary.table--light-blue-900 .table__th {
+	color: var(--c-light-blue-900);
+}
+
+.table.table--secondary.table--light-blue-900 .table__th {
+	border-color: var(--c-light-blue-900);
+}
+
+.table.table--secondary.table--light-green-100,
+.table.table--secondary.table--light-green-100 .table__th {
+	color: var(--c-light-green-100);
+}
+
+.table.table--secondary.table--light-green-100 .table__th {
+	border-color: var(--c-light-green-100);
+}
+
+.table.table--secondary.table--light-green-200,
+.table.table--secondary.table--light-green-200 .table__th {
+	color: var(--c-light-green-200);
+}
+
+.table.table--secondary.table--light-green-200 .table__th {
+	border-color: var(--c-light-green-200);
+}
+
+.table.table--secondary.table--light-green-300,
+.table.table--secondary.table--light-green-300 .table__th {
+	color: var(--c-light-green-300);
+}
+
+.table.table--secondary.table--light-green-300 .table__th {
+	border-color: var(--c-light-green-300);
+}
+
+.table.table--secondary.table--light-green-400,
+.table.table--secondary.table--light-green-400 .table__th {
+	color: var(--c-light-green-400);
+}
+
+.table.table--secondary.table--light-green-400 .table__th {
+	border-color: var(--c-light-green-400);
+}
+
+.table.table--secondary.table--light-green-500,
+.table.table--secondary.table--light-green-500 .table__th {
+	color: var(--c-light-green-500);
+}
+
+.table.table--secondary.table--light-green-500 .table__th {
+	border-color: var(--c-light-green-500);
+}
+
+.table.table--secondary.table--light-green-600,
+.table.table--secondary.table--light-green-600 .table__th {
+	color: var(--c-light-green-600);
+}
+
+.table.table--secondary.table--light-green-600 .table__th {
+	border-color: var(--c-light-green-600);
+}
+
+.table.table--secondary.table--light-green-700,
+.table.table--secondary.table--light-green-700 .table__th {
+	color: var(--c-light-green-700);
+}
+
+.table.table--secondary.table--light-green-700 .table__th {
+	border-color: var(--c-light-green-700);
+}
+
+.table.table--secondary.table--light-green-800,
+.table.table--secondary.table--light-green-800 .table__th {
+	color: var(--c-light-green-800);
+}
+
+.table.table--secondary.table--light-green-800 .table__th {
+	border-color: var(--c-light-green-800);
+}
+
+.table.table--secondary.table--light-green-900,
+.table.table--secondary.table--light-green-900 .table__th {
+	color: var(--c-light-green-900);
+}
+
+.table.table--secondary.table--light-green-900 .table__th {
+	border-color: var(--c-light-green-900);
+}
+
+.table.table--secondary.table--lime-100,
+.table.table--secondary.table--lime-100 .table__th {
+	color: var(--c-lime-100);
+}
+
+.table.table--secondary.table--lime-100 .table__th {
+	border-color: var(--c-lime-100);
+}
+
+.table.table--secondary.table--lime-200,
+.table.table--secondary.table--lime-200 .table__th {
+	color: var(--c-lime-200);
+}
+
+.table.table--secondary.table--lime-200 .table__th {
+	border-color: var(--c-lime-200);
+}
+
+.table.table--secondary.table--lime-300,
+.table.table--secondary.table--lime-300 .table__th {
+	color: var(--c-lime-300);
+}
+
+.table.table--secondary.table--lime-300 .table__th {
+	border-color: var(--c-lime-300);
+}
+
+.table.table--secondary.table--lime-400,
+.table.table--secondary.table--lime-400 .table__th {
+	color: var(--c-lime-400);
+}
+
+.table.table--secondary.table--lime-400 .table__th {
+	border-color: var(--c-lime-400);
+}
+
+.table.table--secondary.table--lime-500,
+.table.table--secondary.table--lime-500 .table__th {
+	color: var(--c-lime-500);
+}
+
+.table.table--secondary.table--lime-500 .table__th {
+	border-color: var(--c-lime-500);
+}
+
+.table.table--secondary.table--lime-600,
+.table.table--secondary.table--lime-600 .table__th {
+	color: var(--c-lime-600);
+}
+
+.table.table--secondary.table--lime-600 .table__th {
+	border-color: var(--c-lime-600);
+}
+
+.table.table--secondary.table--lime-700,
+.table.table--secondary.table--lime-700 .table__th {
+	color: var(--c-lime-700);
+}
+
+.table.table--secondary.table--lime-700 .table__th {
+	border-color: var(--c-lime-700);
+}
+
+.table.table--secondary.table--lime-800,
+.table.table--secondary.table--lime-800 .table__th {
+	color: var(--c-lime-800);
+}
+
+.table.table--secondary.table--lime-800 .table__th {
+	border-color: var(--c-lime-800);
+}
+
+.table.table--secondary.table--lime-900,
+.table.table--secondary.table--lime-900 .table__th {
+	color: var(--c-lime-900);
+}
+
+.table.table--secondary.table--lime-900 .table__th {
+	border-color: var(--c-lime-900);
+}
+
+.table.table--secondary.table--orange-100,
+.table.table--secondary.table--orange-100 .table__th {
+	color: var(--c-orange-100);
+}
+
+.table.table--secondary.table--orange-100 .table__th {
+	border-color: var(--c-orange-100);
+}
+
+.table.table--secondary.table--orange-200,
+.table.table--secondary.table--orange-200 .table__th {
+	color: var(--c-orange-200);
+}
+
+.table.table--secondary.table--orange-200 .table__th {
+	border-color: var(--c-orange-200);
+}
+
+.table.table--secondary.table--orange-300,
+.table.table--secondary.table--orange-300 .table__th {
+	color: var(--c-orange-300);
+}
+
+.table.table--secondary.table--orange-300 .table__th {
+	border-color: var(--c-orange-300);
+}
+
+.table.table--secondary.table--orange-400,
+.table.table--secondary.table--orange-400 .table__th {
+	color: var(--c-orange-400);
+}
+
+.table.table--secondary.table--orange-400 .table__th {
+	border-color: var(--c-orange-400);
+}
+
+.table.table--secondary.table--orange-500,
+.table.table--secondary.table--orange-500 .table__th {
+	color: var(--c-orange-500);
+}
+
+.table.table--secondary.table--orange-500 .table__th {
+	border-color: var(--c-orange-500);
+}
+
+.table.table--secondary.table--orange-600,
+.table.table--secondary.table--orange-600 .table__th {
+	color: var(--c-orange-600);
+}
+
+.table.table--secondary.table--orange-600 .table__th {
+	border-color: var(--c-orange-600);
+}
+
+.table.table--secondary.table--orange-700,
+.table.table--secondary.table--orange-700 .table__th {
+	color: var(--c-orange-700);
+}
+
+.table.table--secondary.table--orange-700 .table__th {
+	border-color: var(--c-orange-700);
+}
+
+.table.table--secondary.table--orange-800,
+.table.table--secondary.table--orange-800 .table__th {
+	color: var(--c-orange-800);
+}
+
+.table.table--secondary.table--orange-800 .table__th {
+	border-color: var(--c-orange-800);
+}
+
+.table.table--secondary.table--orange-900,
+.table.table--secondary.table--orange-900 .table__th {
+	color: var(--c-orange-900);
+}
+
+.table.table--secondary.table--orange-900 .table__th {
+	border-color: var(--c-orange-900);
+}
+
+.table.table--secondary.table--pink-100,
+.table.table--secondary.table--pink-100 .table__th {
+	color: var(--c-pink-100);
+}
+
+.table.table--secondary.table--pink-100 .table__th {
+	border-color: var(--c-pink-100);
+}
+
+.table.table--secondary.table--pink-200,
+.table.table--secondary.table--pink-200 .table__th {
+	color: var(--c-pink-200);
+}
+
+.table.table--secondary.table--pink-200 .table__th {
+	border-color: var(--c-pink-200);
+}
+
+.table.table--secondary.table--pink-300,
+.table.table--secondary.table--pink-300 .table__th {
+	color: var(--c-pink-300);
+}
+
+.table.table--secondary.table--pink-300 .table__th {
+	border-color: var(--c-pink-300);
+}
+
+.table.table--secondary.table--pink-400,
+.table.table--secondary.table--pink-400 .table__th {
+	color: var(--c-pink-400);
+}
+
+.table.table--secondary.table--pink-400 .table__th {
+	border-color: var(--c-pink-400);
+}
+
+.table.table--secondary.table--pink-500,
+.table.table--secondary.table--pink-500 .table__th {
+	color: var(--c-pink-500);
+}
+
+.table.table--secondary.table--pink-500 .table__th {
+	border-color: var(--c-pink-500);
+}
+
+.table.table--secondary.table--pink-600,
+.table.table--secondary.table--pink-600 .table__th {
+	color: var(--c-pink-600);
+}
+
+.table.table--secondary.table--pink-600 .table__th {
+	border-color: var(--c-pink-600);
+}
+
+.table.table--secondary.table--pink-700,
+.table.table--secondary.table--pink-700 .table__th {
+	color: var(--c-pink-700);
+}
+
+.table.table--secondary.table--pink-700 .table__th {
+	border-color: var(--c-pink-700);
+}
+
+.table.table--secondary.table--pink-800,
+.table.table--secondary.table--pink-800 .table__th {
+	color: var(--c-pink-800);
+}
+
+.table.table--secondary.table--pink-800 .table__th {
+	border-color: var(--c-pink-800);
+}
+
+.table.table--secondary.table--pink-900,
+.table.table--secondary.table--pink-900 .table__th {
+	color: var(--c-pink-900);
+}
+
+.table.table--secondary.table--pink-900 .table__th {
+	border-color: var(--c-pink-900);
+}
+
+.table.table--secondary.table--purple-100,
+.table.table--secondary.table--purple-100 .table__th {
+	color: var(--c-purple-100);
+}
+
+.table.table--secondary.table--purple-100 .table__th {
+	border-color: var(--c-purple-100);
+}
+
+.table.table--secondary.table--purple-200,
+.table.table--secondary.table--purple-200 .table__th {
+	color: var(--c-purple-200);
+}
+
+.table.table--secondary.table--purple-200 .table__th {
+	border-color: var(--c-purple-200);
+}
+
+.table.table--secondary.table--purple-300,
+.table.table--secondary.table--purple-300 .table__th {
+	color: var(--c-purple-300);
+}
+
+.table.table--secondary.table--purple-300 .table__th {
+	border-color: var(--c-purple-300);
+}
+
+.table.table--secondary.table--purple-400,
+.table.table--secondary.table--purple-400 .table__th {
+	color: var(--c-purple-400);
+}
+
+.table.table--secondary.table--purple-400 .table__th {
+	border-color: var(--c-purple-400);
+}
+
+.table.table--secondary.table--purple-500,
+.table.table--secondary.table--purple-500 .table__th {
+	color: var(--c-purple-500);
+}
+
+.table.table--secondary.table--purple-500 .table__th {
+	border-color: var(--c-purple-500);
+}
+
+.table.table--secondary.table--purple-600,
+.table.table--secondary.table--purple-600 .table__th {
+	color: var(--c-purple-600);
+}
+
+.table.table--secondary.table--purple-600 .table__th {
+	border-color: var(--c-purple-600);
+}
+
+.table.table--secondary.table--purple-700,
+.table.table--secondary.table--purple-700 .table__th {
+	color: var(--c-purple-700);
+}
+
+.table.table--secondary.table--purple-700 .table__th {
+	border-color: var(--c-purple-700);
+}
+
+.table.table--secondary.table--purple-800,
+.table.table--secondary.table--purple-800 .table__th {
+	color: var(--c-purple-800);
+}
+
+.table.table--secondary.table--purple-800 .table__th {
+	border-color: var(--c-purple-800);
+}
+
+.table.table--secondary.table--purple-900,
+.table.table--secondary.table--purple-900 .table__th {
+	color: var(--c-purple-900);
+}
+
+.table.table--secondary.table--purple-900 .table__th {
+	border-color: var(--c-purple-900);
+}
+
+.table.table--secondary.table--red-100,
+.table.table--secondary.table--red-100 .table__th {
+	color: var(--c-red-100);
+}
+
+.table.table--secondary.table--red-100 .table__th {
+	border-color: var(--c-red-100);
+}
+
+.table.table--secondary.table--red-200,
+.table.table--secondary.table--red-200 .table__th {
+	color: var(--c-red-200);
+}
+
+.table.table--secondary.table--red-200 .table__th {
+	border-color: var(--c-red-200);
+}
+
+.table.table--secondary.table--red-300,
+.table.table--secondary.table--red-300 .table__th {
+	color: var(--c-red-300);
+}
+
+.table.table--secondary.table--red-300 .table__th {
+	border-color: var(--c-red-300);
+}
+
+.table.table--secondary.table--red-400,
+.table.table--secondary.table--red-400 .table__th {
+	color: var(--c-red-400);
+}
+
+.table.table--secondary.table--red-400 .table__th {
+	border-color: var(--c-red-400);
+}
+
+.table.table--secondary.table--red-500,
+.table.table--secondary.table--red-500 .table__th {
+	color: var(--c-red-500);
+}
+
+.table.table--secondary.table--red-500 .table__th {
+	border-color: var(--c-red-500);
+}
+
+.table.table--secondary.table--red-600,
+.table.table--secondary.table--red-600 .table__th {
+	color: var(--c-red-600);
+}
+
+.table.table--secondary.table--red-600 .table__th {
+	border-color: var(--c-red-600);
+}
+
+.table.table--secondary.table--red-700,
+.table.table--secondary.table--red-700 .table__th {
+	color: var(--c-red-700);
+}
+
+.table.table--secondary.table--red-700 .table__th {
+	border-color: var(--c-red-700);
+}
+
+.table.table--secondary.table--red-800,
+.table.table--secondary.table--red-800 .table__th {
+	color: var(--c-red-800);
+}
+
+.table.table--secondary.table--red-800 .table__th {
+	border-color: var(--c-red-800);
+}
+
+.table.table--secondary.table--red-900,
+.table.table--secondary.table--red-900 .table__th {
+	color: var(--c-red-900);
+}
+
+.table.table--secondary.table--red-900 .table__th {
+	border-color: var(--c-red-900);
+}
+
+.table.table--secondary.table--teal-100,
+.table.table--secondary.table--teal-100 .table__th {
+	color: var(--c-teal-100);
+}
+
+.table.table--secondary.table--teal-100 .table__th {
+	border-color: var(--c-teal-100);
+}
+
+.table.table--secondary.table--teal-200,
+.table.table--secondary.table--teal-200 .table__th {
+	color: var(--c-teal-200);
+}
+
+.table.table--secondary.table--teal-200 .table__th {
+	border-color: var(--c-teal-200);
+}
+
+.table.table--secondary.table--teal-300,
+.table.table--secondary.table--teal-300 .table__th {
+	color: var(--c-teal-300);
+}
+
+.table.table--secondary.table--teal-300 .table__th {
+	border-color: var(--c-teal-300);
+}
+
+.table.table--secondary.table--teal-400,
+.table.table--secondary.table--teal-400 .table__th {
+	color: var(--c-teal-400);
+}
+
+.table.table--secondary.table--teal-400 .table__th {
+	border-color: var(--c-teal-400);
+}
+
+.table.table--secondary.table--teal-500,
+.table.table--secondary.table--teal-500 .table__th {
+	color: var(--c-teal-500);
+}
+
+.table.table--secondary.table--teal-500 .table__th {
+	border-color: var(--c-teal-500);
+}
+
+.table.table--secondary.table--teal-600,
+.table.table--secondary.table--teal-600 .table__th {
+	color: var(--c-teal-600);
+}
+
+.table.table--secondary.table--teal-600 .table__th {
+	border-color: var(--c-teal-600);
+}
+
+.table.table--secondary.table--teal-700,
+.table.table--secondary.table--teal-700 .table__th {
+	color: var(--c-teal-700);
+}
+
+.table.table--secondary.table--teal-700 .table__th {
+	border-color: var(--c-teal-700);
+}
+
+.table.table--secondary.table--teal-800,
+.table.table--secondary.table--teal-800 .table__th {
+	color: var(--c-teal-800);
+}
+
+.table.table--secondary.table--teal-800 .table__th {
+	border-color: var(--c-teal-800);
+}
+
+.table.table--secondary.table--teal-900,
+.table.table--secondary.table--teal-900 .table__th {
+	color: var(--c-teal-900);
+}
+
+.table.table--secondary.table--teal-900 .table__th {
+	border-color: var(--c-teal-900);
+}
+
+.table.table--secondary.table--yellow-100,
+.table.table--secondary.table--yellow-100 .table__th {
+	color: var(--c-yellow-100);
+}
+
+.table.table--secondary.table--yellow-100 .table__th {
+	border-color: var(--c-yellow-100);
+}
+
+.table.table--secondary.table--yellow-200,
+.table.table--secondary.table--yellow-200 .table__th {
+	color: var(--c-yellow-200);
+}
+
+.table.table--secondary.table--yellow-200 .table__th {
+	border-color: var(--c-yellow-200);
+}
+
+.table.table--secondary.table--yellow-300,
+.table.table--secondary.table--yellow-300 .table__th {
+	color: var(--c-yellow-300);
+}
+
+.table.table--secondary.table--yellow-300 .table__th {
+	border-color: var(--c-yellow-300);
+}
+
+.table.table--secondary.table--yellow-400,
+.table.table--secondary.table--yellow-400 .table__th {
+	color: var(--c-yellow-400);
+}
+
+.table.table--secondary.table--yellow-400 .table__th {
+	border-color: var(--c-yellow-400);
+}
+
+.table.table--secondary.table--yellow-500,
+.table.table--secondary.table--yellow-500 .table__th {
+	color: var(--c-yellow-500);
+}
+
+.table.table--secondary.table--yellow-500 .table__th {
+	border-color: var(--c-yellow-500);
+}
+
+.table.table--secondary.table--yellow-600,
+.table.table--secondary.table--yellow-600 .table__th {
+	color: var(--c-yellow-600);
+}
+
+.table.table--secondary.table--yellow-600 .table__th {
+	border-color: var(--c-yellow-600);
+}
+
+.table.table--secondary.table--yellow-700,
+.table.table--secondary.table--yellow-700 .table__th {
+	color: var(--c-yellow-700);
+}
+
+.table.table--secondary.table--yellow-700 .table__th {
+	border-color: var(--c-yellow-700);
+}
+
+.table.table--secondary.table--yellow-800,
+.table.table--secondary.table--yellow-800 .table__th {
+	color: var(--c-yellow-800);
+}
+
+.table.table--secondary.table--yellow-800 .table__th {
+	border-color: var(--c-yellow-800);
+}
+
+.table.table--secondary.table--yellow-900,
+.table.table--secondary.table--yellow-900 .table__th {
+	color: var(--c-yellow-900);
+}
+
+.table.table--secondary.table--yellow-900 .table__th {
+	border-color: var(--c-yellow-900);
+}
+
+/* contrast */
+
+.table:not(.table--secondary).table--dark .table__th {
+	color: var(--c-text-light);
+}
+
+.table:not(.table--secondary).table--light .table__th {
+	color: var(--c-text-dark);
 }
